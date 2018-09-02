@@ -1,0 +1,135 @@
+Title,Authors,Abstract,Date,URL
+"
+Differential and integral invariants under Mobius transformation","He Zhang, Hanlin Mo, You Hao, Qi Li, Hua Li"," One of the most challenging problems in the domain of 2-D image or 3-D shape
+is to handle the non-rigid deformation. From the perspective of transformation
+groups, the conformal transformation is a key part of the diffeomorphism.
+According to the Liouville Theorem, an important part of the conformal
+transformation is the Mobius transformation, so we focus on Mobius
+transformation and propose two differential expressions that are invariable
+under 2-D and 3-D Mobius transformation respectively. Next, we analyze the
+absoluteness and relativity of invariance on them and their components. After
+that, we propose integral invariants under Mobius transformation based on the
+two differential expressions. Finally, we propose a conjecture about the
+structure of differential invariants under conformal transformation according
+to our observation on the composition of the above two differential invariants.
+",(Submitted on 30 Aug 2018),https://arxiv.org/abs/1808.10083
+"
+3D-Aware Scene Manipulation via Inverse Graphics","Shunyu Yao, Tzu Ming Harry Hsu, Jun-Yan Zhu, Jiajun Wu, Antonio Torralba, William T. Freeman, Joshua B. Tenenbaum"," We aim to obtain an interpretable, expressive, and disentangled scene
+representation that contains comprehensive structural and textural information
+for each object. Previous representations learned by neural networks are often
+uninterpretable, limited to a single object, or lacking 3D knowledge. In this
+work, we address the above issues by integrating disentangled representations
+for object geometry, appearance, and pose into a deep generative model. Our
+scene encoder performs inverse graphics, translating a scene into the
+structured object representation. Our decoder has two components: a
+differentiable shape renderer and a neural texture generator. The
+disentanglement of geometry, appearance, and pose supports various 3D-aware
+scene manipulations, e.g., rotating and moving objects freely while maintaining
+consistent shape and texture, changing object appearance without affecting its
+shape. We systematically evaluate our model and demonstrate that our editing
+scheme is superior to its 2D counterpart.
+",(Submitted on 28 Aug 2018 (,https://arxiv.org/abs/1808.09351
+"
+Wide Activation for Efficient and Accurate Image Super-Resolution","Jiahui Yu, Yuchen Fan, Jianchao Yang, Ning Xu, Zhaowen Wang, Xinchao Wang, Thomas Huang"," In this report we demonstrate that with same parameters and computational
+budgets, models with wider features before ReLU activation have significantly
+better performance for single image super-resolution (SISR). The resulted SR
+residual network has a slim identity mapping pathway with wider (\(2\times\) to
+\(4\times\)) channels before activation in each residual block. To further
+widen activation (\(6\times\) to \(9\times\)) without computational overhead,
+we introduce linear low-rank convolution into SR networks and achieve even
+better accuracy-efficiency tradeoffs. In addition, compared with batch
+normalization or no normalization, we find training with weight normalization
+leads to better accuracy for deep super-resolution networks. Our proposed SR
+network \textit{WDSR} achieves better results on large-scale DIV2K image
+super-resolution benchmark in terms of PSNR with same or lower computational
+complexity. Based on WDSR, our method also won 1st places in NTIRE 2018
+Challenge on Single Image Super-Resolution in all three realistic tracks.
+Experiments and ablation studies support the importance of wide activation for
+image super-resolution. Code is released at:
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08718
+"
+Automatic Generation of Constrained Furniture Layouts","Paul Henderson, Kartic Subr, Vittorio Ferrari"," Efficient authoring of vast virtual environments hinges on algorithms that
+are able to automatically generate content while also being controllable. We
+propose a method to automatically generate furniture layouts for indoor
+environments. Our method is simple, efficient, human-interpretable and amenable
+to a wide variety of constraints. We model the composition of rooms into
+classes of objects and learn joint (co-occurrence) statistics from a database
+of training layouts. We generate new layouts by performing a sequence of
+conditional sampling steps, exploiting the statistics learned from the
+database. The generated layouts are specified as 3D object models, along with
+their positions and orientations. We incorporate constraints using a general
+mechanism -- rejection sampling -- which provides great flexibility at the cost
+of extra computation. We demonstrate the versatility of our method by
+accommodating a wide variety of constraints.
+",(Submitted on 29 Nov 2017 (,https://arxiv.org/abs/1711.10939
+"
+StretchDenoise: Parametric Curve Reconstruction with Guarantees by  Separating Connectivity from Residual Uncertainty of Samples","Stefan Ohrhallinger, Michael Wimmer"," We reconstruct a closed denoised curve from an unstructured and highly noisy
+2D point cloud. Our proposed method uses a two- pass approach: Previously
+recovered manifold connectivity is used for ordering noisy samples along this
+manifold and express these as residuals in order to enable parametric
+denoising. This separates recovering low-frequency features from denoising high
+frequencies, which avoids over-smoothing. The noise probability density
+functions (PDFs) at samples are either taken from sensor noise models or from
+estimates of the connectivity recovered in the first pass. The output curve
+balances the signed distances (inside/outside) to the samples. Additionally,
+the angles between edges of the polygon representing the connectivity become
+minimized in the least-square sense. The movement of the polygon's vertices is
+restricted to their noise extent, i.e., a cut-off distance corresponding to a
+maximum variance of the PDFs. We approximate the resulting optimization model,
+which consists of higher-order functions, by a linear model with good
+correspondence. Our algorithm is parameter-free and operates fast on the local
+neighborhoods determined by the connectivity. We augment a least-squares solver
+constrained by a linear system to also handle bounds. This enables us to
+guarantee stochastic error bounds for sampled curves corrupted by noise, e.g.,
+silhouettes from sensed data, and we improve on the reconstruction error from
+ground truth. Open source to reproduce figures and tables in this paper is
+available at: ",(Submitted on 23 Aug 2018),https://arxiv.org/abs/1808.07778
+"
+Deep Portrait Image Completion and Extrapolation","Xian Wu, Rui-Long Li, Fang-Lue Zhang, Jian-Cheng Liu, Jue Wang, Ariel Shamir, Shi-Min Hu"," General image completion and extrapolation methods often fail on portrait
+images where parts of the human body need to be recovered - a task that
+requires accurate human body structure and appearance synthesis. We present a
+two-stage deep learning framework for tacking this problem. In the first stage,
+given a portrait image with an incomplete human body, we extract a complete,
+coherent human body structure through a human parsing network, which focuses on
+structure recovery inside the unknown region with the help of pose estimation.
+In the second stage, we use an image completion network to fill the unknown
+region, guided by the structure map recovered in the first stage. For realistic
+synthesis the completion network is trained with both perceptual loss and
+conditional adversarial loss. We evaluate our method on public portrait image
+datasets, and show that it outperforms other state-of-art general image
+completion methods. Our method enables new portrait image editing applications
+such as occlusion removal and portrait extrapolation. We further show that the
+proposed general learning framework can be applied to other types of images,
+e.g. animal images.
+",(Submitted on 23 Aug 2018),https://arxiv.org/abs/1808.07757
+"
+Optimizing B-spline surfaces for developability and paneling  architectural freeform surfaces","Konstantinos Gavriil, Alexander Schiftner, Helmut Pottmann"," Motivated by applications in architecture and design, we present a novel
+method for increasing the developability of a B-spline surface. We use the
+property that the Gauss image of a developable surface is 1-dimensional and can
+be locally well approximated by circles. This is cast into an algorithm for
+thinning the Gauss image by increasing the planarity of the Gauss images of
+appropriate neighborhoods. A variation of the main method allows us to tackle
+the problem of paneling a freeform architectural surface with developable
+panels, in particular enforcing rotational cylindrical, rotational conical and
+planar panels, which are the main preferred types of developable panels in
+architecture due to the reduced cost of manufacturing.
+",(Submitted on 22 Aug 2018),https://arxiv.org/abs/1808.07560
+"
+Learning to Importance Sample in Primary Sample Space","Quan Zheng, Matthias Zwicker"," Importance sampling is one of the most widely used variance reduction
+strategies in Monte Carlo rendering. In this paper, we propose a novel
+importance sampling technique that uses a neural network to learn how to sample
+from a desired density represented by a set of samples. Our approach considers
+an existing Monte Carlo rendering algorithm as a black box. During a
+scene-dependent training phase, we learn to generate samples with a desired
+density in the primary sample space of the rendering algorithm using maximum
+likelihood estimation. We leverage a recent neural network architecture that
+was designed to represent real-valued non-volume preserving ('Real NVP')
+transformations in high dimensional spaces. We use Real NVP to non-linearly
+warp primary sample space and obtain desired densities. In addition, Real NVP
+efficiently computes the determinant of the Jacobian of the warp, which is
+required to implement the change of integration variables implied by the warp.
+A main advantage of our approach is that it is agnostic of underlying light
+transport effects, and can be combined with many existing rendering techniques
+by treating them as a black box. We show that our approach leads to effective
+variance reduction in several practical scenarios.
+",(Submitted on 23 Aug 2018),https://arxiv.org/abs/1808.07840

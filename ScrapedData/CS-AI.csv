@@ -1,0 +1,1064 @@
+Title,Authors,Abstract,Date,URL
+"
+ExpIt-OOS: Towards Learning from Planning in Imperfect Information Games","Andy Kitchen, Michela Benedetti"," The current state of the art in playing many important perfect information
+games, including Chess and Go, combines planning and deep reinforcement
+learning with self-play. We extend this approach to imperfect information games
+and present ExIt-OOS, a novel approach to playing imperfect information games
+within the Expert Iteration framework and inspired by AlphaZero. We use Online
+Outcome Sampling, an online search algorithm for imperfect information games in
+place of MCTS. While training online, our neural strategy is used to improve
+the accuracy of playouts in OOS, allowing a learning and planning feedback loop
+for imperfect information games.
+",(Submitted on 30 Aug 2018),https://arxiv.org/abs/1808.10120
+"
+Rule-based OWL Modeling with ROWLTab Protege Plugin","Md. Kamruzzaman Sarker, Adila Krisnadhi, David Carral, Pascal Hitzler"," It has been argued that it is much easier to convey logical statements using
+rules rather than OWL (or description logic (DL)) axioms. Based on recent
+theoretical developments on transformations between rules and DLs, we have
+developed ROWLTab, a Protege plugin that allows users to enter OWL axioms by
+way of rules; the plugin then automatically converts these rules into OWL 2 DL
+axioms if possible, and prompts the user in case such a conversion is not
+possible without weakening the semantics of the rule. In this paper, we present
+ROWLTab, together with a user evaluation of its effectiveness compared to
+entering axioms using the standard Protege interface. Our evaluation shows that
+modeling with ROWLTab is much quicker than the standard interface, while at the
+same time, also less prone to errors for hard modeling tasks.
+",(Submitted on 30 Aug 2018),https://arxiv.org/abs/1808.10108
+"
+OWLAx: A Protege Plugin to Support Ontology Axiomatization through  Diagramming","Md. Kamruzzaman Sarker, Adila A. Krisnadhi, Pascal Hitzler"," Once the conceptual overview, in terms of a somewhat informal class diagram,
+has been designed in the course of engineering an ontology, the process of
+adding many of the appropriate logical axioms is mostly a routine task. We
+provide a Protege plugin which supports this task, together with a visual user
+interface, based on established methods for ontology design pattern modeling.
+",(Submitted on 30 Aug 2018),https://arxiv.org/abs/1808.10105
+"
+Modeling OWL with Rules: The ROWL Protege Plugin","Md. Kamruzzaman Sarker, David Carral, Adila A. Krisnadhi, Pascal Hitzler"," In our experience, some ontology users find it much easier to convey logical
+statements using rules rather than OWL (or description logic) axioms. Based on
+recent theoretical developments on transformations between rules and
+description logics, we develop ROWL, a Protege plugin that allows users to
+enter OWL axioms by way of rules; the plugin then automatically converts these
+rules into OWL DL axioms if possible, and prompts the user in case such a
+conversion is not possible without weakening the semantics of the rule.
+",(Submitted on 30 Aug 2018),https://arxiv.org/abs/1808.10104
+"
+Reasoning about Actions and State Changes by Injecting Commonsense  Knowledge","Niket Tandon, Bhavana Dalvi Mishra, Joel Grus, Wen-tau Yih, Antoine Bosselut, Peter Clark"," Comprehending procedural text, e.g., a paragraph describing photosynthesis,
+requires modeling actions and the state changes they produce, so that questions
+about entities at different timepoints can be answered. Although several recent
+systems have shown impressive progress in this task, their predictions can be
+globally inconsistent or highly improbable. In this paper, we show how the
+predicted effects of actions in the context of a paragraph can be improved in
+two ways: (1) by incorporating global, commonsense constraints (e.g., a
+non-existent entity cannot be destroyed), and (2) by biasing reading with
+preferences from large-scale corpora (e.g., trees rarely move). Unlike earlier
+methods, we treat the problem as a neural structured prediction task, allowing
+hard and soft constraints to steer the model away from unlikely predictions. We
+show that the new model significantly outperforms earlier systems on a
+benchmark dataset for procedural text comprehension (+8% relative gain), and
+that it also avoids some of the nonsensical predictions that earlier systems
+make.
+",(Submitted on 29 Aug 2018),https://arxiv.org/abs/1808.10012
+"
+Learning End-to-end Autonomous Driving using Guided Auxiliary  Supervision","Ashish Mehta, Adithya Subramanian, Anbumani Subramanian"," Learning to drive faithfully in highly stochastic urban settings remains an
+open problem. To that end, we propose a Multi-task Learning from Demonstration
+(MT-LfD) framework which uses supervised auxiliary task prediction to guide the
+main task of predicting the driving commands. Our framework involves an
+end-to-end trainable network for imitating the expert demonstrator's driving
+commands. The network intermediately predicts visual affordances and action
+primitives through direct supervision which provide the aforementioned
+auxiliary supervised guidance. We demonstrate that such joint learning and
+supervised guidance facilitates hierarchical task decomposition, assisting the
+agent to learn faster, achieve better driving performance and increases
+transparency of the otherwise black-box end-to-end network. We run our
+experiments to validate the MT-LfD framework in CARLA, an open-source urban
+driving simulator. We introduce multiple non-player agents in CARLA and induce
+temporal noise in them for realistic stochasticity.
+",(Submitted on 30 Aug 2018),https://arxiv.org/abs/1808.10393
+"
+Robot_gym: accelerated robot training through simulation in the cloud  with ROS and Gazebo","Víctor Mayoral Vilches, Alejandro Hernández Cordero, Asier Bilbao Calvo, Irati Zamalloa Ugarte, Risto Kojcev"," Rather than programming, training allows robots to achieve behaviors that
+generalize better and are capable to respond to real-world needs. However, such
+training requires a big amount of experimentation which is not always feasible
+for a physical robot. In this work, we present robot_gym, a framework to
+accelerate robot training through simulation in the cloud that makes use of
+roboticists' tools, simplifying the development and deployment processes on
+real robots. We unveil that, for simple tasks, simple 3DoF robots require more
+than 140 attempts to learn. For more complex, 6DoF robots, the number of
+attempts increases to more than 900 for the same task. We demonstrate that our
+framework, for simple tasks, accelerates the robot training time by more than
+33% while maintaining similar levels of accuracy and repeatability.
+",(Submitted on 30 Aug 2018),https://arxiv.org/abs/1808.10369
+"
+Baidu Apollo Auto-Calibration System - An Industry-Level Data-Driven and  Learning based Vehicle Longitude Dynamic Calibrating Algorithm","Fan Zhu, Lin Ma, Xin Xu, Dingfeng Guo, Xiao Cui, Qi Kong"," For any autonomous driving vehicle, control module determines its road
+performance and safety, i.e. its precision and stability should stay within a
+carefully-designed range. Nonetheless, control algorithms require vehicle
+dynamics (such as longitudinal dynamics) as inputs, which, unfortunately, are
+obscure to calibrate in real time. As a result, to achieve reasonable
+performance, most, if not all, research-oriented autonomous vehicles do manual
+calibrations in a one-by-one fashion. Since manual calibration is not
+sustainable once entering into mass production stage for industrial purposes,
+we here introduce a machine-learning based auto-calibration system for
+autonomous driving vehicles. In this paper, we will show how we build a
+data-driven longitudinal calibration procedure using machine learning
+techniques. We first generated offline calibration tables from human driving
+data. The offline table serves as an initial guess for later uses and it only
+needs twenty-minutes data collection and process. We then used an
+online-learning algorithm to appropriately update the initial table (the
+offline table) based on real-time performance analysis. This longitudinal
+auto-calibration system has been deployed to more than one hundred Baidu Apollo
+self-driving vehicles (including hybrid family vehicles and electronic
+delivery-only vehicles) since April 2018. By August 27, 2018, it had been
+tested for more than two thousands hours, ten thousands kilometers (6,213
+miles) and yet proven to be effective.
+",(Submitted on 30 Aug 2018),https://arxiv.org/abs/1808.10134
+"
+Learning a Policy for Opportunistic Active Learning","Aishwarya Padmakumar, Peter Stone, Raymond J. Mooney"," Active learning identifies data points to label that are expected to be the
+most useful in improving a supervised model. Opportunistic active learning
+incorporates active learning into interactive tasks that constrain possible
+queries during interactions. Prior work has shown that opportunistic active
+learning can be used to improve grounding of natural language descriptions in
+an interactive object retrieval task. In this work, we use reinforcement
+learning for such an object retrieval task, to learn a policy that effectively
+trades off task completion with model improvement that would benefit future
+tasks.
+",(Submitted on 29 Aug 2018),https://arxiv.org/abs/1808.10009
+"
+Learning End-to-End Goal-Oriented Dialog with Multiple Answers","Janarthanan Rajendran, Jatin Ganhotra, Satinder Singh, Lazaros Polymenakos"," In a dialog, there can be multiple valid next utterances at any point. The
+present end-to-end neural methods for dialog do not take this into account.
+They learn with the assumption that at any time there is only one correct next
+utterance. In this work, we focus on this problem in the goal-oriented dialog
+setting where there are different paths to reach a goal. We propose a new
+method, that uses a combination of supervised learning and reinforcement
+learning approaches to address this issue. We also propose a new and more
+effective testbed, permuted-bAbI dialog tasks, by introducing multiple valid
+next utterances to the original-bAbI dialog tasks, which allows evaluation of
+goal-oriented dialog systems in a more realistic setting. We show that there is
+a significant drop in performance of existing end-to-end neural methods from
+81.5% per-dialog accuracy on original-bAbI dialog tasks to 30.3% on
+permuted-bAbI dialog tasks. We also show that our proposed method improves the
+performance and achieves 47.3% per-dialog accuracy on permuted-bAbI dialog
+tasks.
+",(Submitted on 24 Aug 2018),https://arxiv.org/abs/1808.09996
+"
+Modelling Langford's Problem: A Viewpoint for Search","Özgür Akgün, Ian Miguel"," The performance of enumerating all solutions to an instance of Langford's
+Problem is sensitive to the model and the search strategy. In this paper we
+compare the performance of a large variety of models, all derived from two base
+viewpoints. We empirically show that a channelled model with a static branching
+order on one of the viewpoints offers the best performance out of all the
+options we consider. Surprisingly, one of the base models proves very effective
+for propagation, while the other provides an effective means of stating a
+static search order.
+",(Submitted on 29 Aug 2018),https://arxiv.org/abs/1808.09847
+"
+An Efficient Matheuristic for the Minimum-Weight Dominating Set Problem","Mayra Albuquerque, Thibaut Vidal"," A minimum dominating set in a graph is a minimum set of vertices such that
+every vertex of the graph either belongs to it, or is adjacent to one vertex of
+this set. This mathematical object is of high relevance in a number of
+applications related to social networks analysis, design of wireless networks,
+coding theory, and data mining, among many others. When vertex weights are
+given, minimizing the total weight of the dominating set gives rise to a
+problem variant known as the minimum weight dominating set problem. To solve
+this problem, we introduce a hybrid matheuristic combining a tabu search with
+an integer programming solver. The latter is used to solve subproblems in which
+only a fraction of the decision variables, selected relatively to the search
+history, are left free while the others are fixed. Moreover, we introduce an
+adaptive penalty to promote the exploration of intermediate infeasible
+solutions during the search, enhance the algorithm with perturbations and node
+elimination procedures, and exploit richer neighborhood classes. Extensive
+experimental analyses on a variety of instance classes demonstrate the good
+performance of the algorithm, and the contribution of each component in the
+success of the search is analyzed.
+",(Submitted on 28 Aug 2018),https://arxiv.org/abs/1808.09809
+"
+Cycle-of-Learning for Autonomous Systems from Human Interaction","Nicholas R. Waytowich, Vinicius G. Goecks, Vernon J. Lawhern"," We discuss different types of human-robot interaction paradigms in the
+context of training end-to-end reinforcement learning algorithms. We provide a
+taxonomy to categorize the types of human interaction and present our
+Cycle-of-Learning framework for autonomous systems that combines different
+human-interaction modalities with reinforcement learning. Two key concepts
+provided by our Cycle-of-Learning framework are how it handles the integration
+of the different human-interaction modalities (demonstration, intervention, and
+evaluation) and how to define the switching criteria between them.
+",(Submitted on 28 Aug 2018),https://arxiv.org/abs/1808.09572
+"
+Neural Compositional Denotational Semantics for Question Answering","Nitish Gupta, Mike Lewis"," Answering compositional questions requiring multi-step reasoning is
+challenging. We introduce an end-to-end differentiable model for interpreting
+questions about a knowledge graph (KG), which is inspired by formal approaches
+to semantics. Each span of text is represented by a denotation in a KG and a
+vector that captures ungrounded aspects of meaning. Learned composition modules
+recursively combine constituent spans, culminating in a grounding for the
+complete sentence which answers the question. For example, to interpret ""not
+green"", the model represents ""green"" as a set of KG entities and ""not"" as a
+trainable ungrounded vector---and then uses this vector to parameterize a
+composition function that performs a complement operation. For each sentence,
+we build a parse chart subsuming all possible parses, allowing the model to
+jointly learn both the composition operators and output structure by gradient
+descent from end-task supervision. The model learns a variety of challenging
+semantic operators, such as quantifiers, disjunctions and composed relations,
+and infers latent syntactic structure. It also generalizes well to longer
+questions than seen in its training data, in contrast to RNN, its tree-based
+variants, and semantic parsing baselines.
+",(Submitted on 29 Aug 2018),https://arxiv.org/abs/1808.09942
+"
+An Adaptive Conversational Bot Framework",Isak Czeresnia Etinger," How can we enable users to heavily specify criteria for database queries in a
+user-friendly way? This paper describes a general framework of a conversational
+bot that extracts meaningful information from user's sentences, that asks
+subsequent questions to complete missing information, and that adjusts its
+questions and information-extraction parameters for later conversations
+depending on users' behavior. Additionally, we provide a comparison of existing
+tools and give novel techniques to implement such framework. Finally, we
+exemplify the framework with a bot to query movies in a database, whose code is
+available for Microsoft employees.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.09890
+"
+KDSL: a Knowledge-Driven Supervised Learning Framework for Word Sense  Disambiguation","Shi Yin, Yi Zhou, Chenguang Li, Shangfei Wang, Jianmin Ji, Xiaoping Chen, Ruili Wang"," We propose KDSL, a new word sense disambiguation (WSD) framework that
+utilizes knowledge to automatically generate sense-labeled data for supervised
+learning. First, from WordNet, we automatically construct a semantic knowledge
+base called DisDict, which provides refined feature words that highlight the
+differences among word senses, i.e., synsets. Second, we automatically generate
+new sense-labeled data by DisDict from unlabeled corpora. Third, these
+generated data, together with manually labeled data and unlabeled data, are fed
+to a neural framework conducting supervised and unsupervised learning jointly
+to model the semantic relations among synsets, feature words and their
+contexts. The experimental results show that KDSL outperforms several
+representative state-of-the-art methods on various major benchmarks.
+Interestingly, it performs relatively well even when manually labeled data is
+unavailable, thus provides a new promising backoff strategy for WSD.
+",(Submitted on 28 Aug 2018 (,https://arxiv.org/abs/1808.09888
+"
+Approximate Exploration through State Abstraction","Adrien Ali Taïga, Aaron Courville, Marc G. Bellemare"," Although exploration in reinforcement learning is well understood from a
+theoretical point of view, provably correct methods remain impractical. In this
+paper we study the interplay between exploration and approximation, what we
+call \emph{approximate exploration}. We first provide results when the
+approximation is explicit, quantifying the performance of an exploration
+algorithm, MBIE-EB \citep{strehl2008analysis}, when combined with state
+aggregation. In particular, we show that this allows the agent to trade off
+between learning speed and quality of the policy learned. We then turn to a
+successful exploration scheme in practical, pseudo-count based exploration
+bonuses \citep{bellemare2016unifying}. We show that choosing a density model
+implicitly defines an abstraction and that the pseudo-count bonus incentivizes
+the agent to explore using this abstraction. We find, however, that implicit
+exploration may result in a mismatch between the approximated value function
+and exploration bonus, leading to either under- or over-exploration.
+",(Submitted on 29 Aug 2018),https://arxiv.org/abs/1808.09819
+"
+MARL-FWC: Optimal Coordination of Freeway Traffic Control Measures","Ahmed Fares, Walid Gomaa, Mohamed A. Khamis"," The objective of this article is to optimize the overall traffic flow on
+freeways using multiple ramp metering controls plus its complementary Dynamic
+Speed Limits (DSLs). An optimal freeway operation can be reached when
+minimizing the difference between the freeway density and the critical ratio
+for maximum traffic flow. In this article, a Multi-Agent Reinforcement Learning
+for Freeways Control (MARL-FWC) system for ramps metering and DSLs is proposed.
+MARL-FWC introduces a new microscopic framework at the network level based on
+collaborative Markov Decision Process modeling (Markov game) and an associated
+cooperative Q-learning algorithm. The technique incorporates payoff propagation
+(Max-Plus algorithm) under the coordination graphs framework, particularly
+suited for optimal control purposes. MARL-FWC provides three control designs:
+fully independent, fully distributed, and centralized; suited for different
+network architectures. MARL-FWC was extensively tested in order to assess the
+proposed model of the joint payoff, as well as the global payoff. Experiments
+are conducted with heavy traffic flow under the renowned VISSIM traffic
+simulator to evaluate MARL-FWC. The experimental results show a significant
+decrease in the total travel time and an increase in the average speed (when
+compared with the base case) while maintaining an optimal traffic flow.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.09806
+"
+Bringing personalized learning into computer-aided question generation","Yi-Ting Huang, Meng Chang Chen, Yeali S. Sun"," This paper proposes a novel and statistical method of ability estimation
+based on acquisition distribution for a personalized computer aided question
+generation. This method captures the learning outcomes over time and provides a
+flexible measurement based on the acquisition distributions instead of
+precalibration. Compared to the previous studies, the proposed method is
+robust, especially when an ability of a student is unknown. The results from
+the empirical data show that the estimated abilities match the actual abilities
+of learners, and the pretest and post-test of the experimental group show
+significant improvement. These results suggest that this method can serves as
+the ability estimation for a personalized computer-aided testing environment.
+",(Submitted on 29 Aug 2018),https://arxiv.org/abs/1808.09735
+"
+APRIL: Interactively Learning to Summarise by Combining Active  Preference Learning and Reinforcement Learning","Yang Gao, Christian M. Meyer, Iryna Gurevych"," We propose a method to perform automatic document summarisation without using
+reference summaries. Instead, our method interactively learns from users'
+preferences. The merit of preference-based interactive summarisation is that
+preferences are easier for users to provide than reference summaries. Existing
+preference-based interactive learning methods suffer from high sample
+complexity, i.e. they need to interact with the oracle for many rounds in order
+to converge. In this work, we propose a new objective function, which enables
+us to leverage active learning, preference learning and reinforcement learning
+techniques in order to reduce the sample complexity. Both simulation and
+real-user experiments suggest that our method significantly advances the state
+of the art. Our source code is freely available at
+",(Submitted on 29 Aug 2018),https://arxiv.org/abs/1808.09658
+"
+From VQA to Multimodal CQA: Adapting Visual QA Models for Community QA  Tasks","Avikalp Srivastava, Hsin Wen Liu, Sumio Fujita"," In this work, we present novel methods to adapt visual QA models for
+community QA tasks of practical significance - automated question category
+classification and finding experts for question answering - on questions
+containing both text and image. To the best of our knowledge, this is the first
+work to tackle the multimodality challenge in CQA, and is an enabling step
+towards basic question-answering on image-based CQA. First, we analyze the
+differences between visual QA and community QA datasets, discussing the
+limitations of applying VQA models directly to CQA tasks, and then we propose
+novel augmentations to VQA-based models to best address those limitations. Our
+model, with the augmentations of an image-text combination method tailored for
+CQA and use of auxiliary tasks for learning better grounding features,
+significantly outperforms the text-only and VQA model baselines for both tasks
+on real-world CQA data from Yahoo! Chiebukuro, a Japanese counterpart of Yahoo!
+Answers.
+",(Submitted on 29 Aug 2018),https://arxiv.org/abs/1808.09648
+"
+Improved Semantic-Aware Network Embedding with Fine-Grained Word  Alignment","Dinghan Shen, Xinyuan Zhang, Ricardo Henao, Lawrence Carin"," Network embeddings, which learn low-dimensional representations for each
+vertex in a large-scale network, have received considerable attention in recent
+years. For a wide range of applications, vertices in a network are typically
+accompanied by rich textual information such as user profiles, paper abstracts,
+etc. We propose to incorporate semantic features into network embeddings by
+matching important words between text sequences for all pairs of vertices. We
+introduce a word-by-word alignment framework that measures the compatibility of
+embeddings between word pairs, and then adaptively accumulates these alignment
+features with a simple yet effective aggregation function. In experiments, we
+evaluate the proposed framework on three real-world benchmarks for downstream
+tasks, including link prediction and multi-label vertex classification. Results
+demonstrate that our model outperforms state-of-the-art network embedding
+methods by a large margin.
+",(Submitted on 29 Aug 2018),https://arxiv.org/abs/1808.09633
+"
+Autonomous drone cinematographer: Using artistic principles to create  smooth, safe, occlusion-free trajectories for aerial filming","Rogerio Bonatti, Yanfu Zhang, Sanjiban Choudhury, Wenshan Wang, Sebastian Scherer"," Autonomous aerial cinematography has the potential to enable automatic
+capture of aesthetically pleasing videos without requiring human intervention,
+empowering individuals with the capability of high-end film studios. Current
+approaches either only handle off-line trajectory generation, or offer
+strategies that reason over short time horizons and simplistic representations
+for obstacles, which result in jerky movement and low real-life applicability.
+In this work we develop a method for aerial filming that is able to trade off
+shot smoothness, occlusion, and cinematography guidelines in a principled
+manner, even under noisy actor predictions. We present a novel algorithm for
+real-time covariant gradient descent that we use to efficiently find the
+desired trajectories by optimizing a set of cost functions. Experimental
+results show that our approach creates attractive shots, avoiding obstacles and
+occlusion 65 times over 1.25 hours of flight time, re-planning at 5 Hz with a
+10 s time horizon. We robustly film human actors, cars and bicycles performing
+different motion among obstacles, using various shot types.
+",(Submitted on 28 Aug 2018),https://arxiv.org/abs/1808.09563
+"
+Explaining Character-Aware Neural Networks for Word-Level Prediction: Do  They Discover Linguistic Rules?","Fréderic Godin, Kris Demuynck, Joni Dambre, Wesley De Neve, Thomas Demeester"," Character-level features are currently used in different neural network-based
+natural language processing algorithms. However, little is known about the
+character-level patterns those models learn. Moreover, models are often
+compared only quantitatively while a qualitative analysis is missing. In this
+paper, we investigate which character-level patterns neural networks learn and
+if those patterns coincide with manually-defined word segmentations and
+annotations. To that end, we extend the contextual decomposition technique
+(Murdoch et al. 2018) to convolutional neural networks which allows us to
+compare convolutional neural networks and bidirectional long short-term memory
+networks. We evaluate and compare these models for the task of morphological
+tagging on three morphologically different languages and show that these models
+implicitly discover understandable linguistic rules. Our implementation can be
+found at ",(Submitted on 28 Aug 2018),https://arxiv.org/abs/1808.09551
+"
+A Particle Filter based Multi-Objective Optimization Algorithm: PFOPS","Bin Liu, Yaochu Jin"," This letter is concerned with a recently developed paradigm of
+population-based optimization, termed particle filter optimization (PFO). In
+contrast with the commonly used meta-heuristics based methods, the PFO paradigm
+is attractive in terms of coherence in theory and easiness in mathematical
+analysis and interpretation. However, current PFO algorithms only work for
+single-objective optimization cases, while many real-life problems involve
+multiple objectives to be optimized simultaneously. To this end, we make an
+effort to extend the scope of application of the PFO paradigm to
+multi-objective optimization (MOO) cases. An idea called path sampling is
+adopted within the PFO scheme to balance the different objectives to be
+optimized. The resulting algorithm is thus termed PFO with Path Sampling
+(PFOPS). Experimental results show that the proposed algorithm works
+consistently well for three different types of MOO problems, which are
+characterized by an associated convex, concave and discontinuous Pareto front,
+respectively.
+",(Submitted on 28 Aug 2018),https://arxiv.org/abs/1808.09446
+"
+A Summary Description of the A2RD Project","Juliao Braga, Joao Nuno Silva, Patricia Takako Endo, Nizam Omar"," This paper briefly describes the Autonomous Architecture Over Restricted
+Domains project (A2RD). In It begins with the description of the context upon
+which the project is focused, and in the sequence describes the A2RD abstract
+and implementation models. Finish by presenting the environment conceptual
+model named Structure for Knowledge Acquisition, Use and Collaboration Inter
+A2RD Agents (SKAU), showing where stand the components, inputs and facilities
+required to interact among the intelligent agents of the various
+implementations in their respective and restricted routing domains (Autonomous
+Systems) that build the Internet.
+",(Submitted on 26 Aug 2018 (,https://arxiv.org/abs/1808.09293
+"
+A Framework for Complementary Companion Character Behavior in Video  Games","Gavin Scott, Foaad Khosmood"," We propose a game development framework capable of governing the behavior of
+complementary companions in a video game. A ""complementary"" action is
+contrasted with a mimicking action and is defined as any action by a friendly
+non-player character that furthers the player's strategy. This is determined
+through a combination of both player action and game state prediction processes
+while allowing the AI companion to experiment. We determine the location of
+interest for companion actions based on a dynamic set of regions customized to
+the individual player. A user study shows promising results; a majority of
+participants familiar with game design react positively to the companion
+behavior, stating that they would consider using the frame-work in future games
+themselves.
+",(Submitted on 28 Aug 2018),https://arxiv.org/abs/1808.09079
+"
+Cognitive Consistency Routing Algorithm of Capsule-network",Huayu Li," Artificial Neural Networks (ANNs) are computational models inspired by the
+central nervous system (especially the brain) of animals and are used to
+estimate or generate unknown approximation functions relied on large amounts of
+inputs. Capsule Neural Network (Sabour S, et al.[2017]) is a novel structure of
+Convolutional Neural Networks which simulates the visual processing system of
+human brain. In this paper, we introduce psychological theories which called
+Cognitive Consistency to optimize the routing algorithm of Capsnet to make it
+more close to the work pattern of human brain. It has been shown in the
+experiment that a progress had been made compared with the baseline.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.09062
+"
+Choosing How to Choose Papers","Ritesh Noothigattu, Nihar B. Shah, Ariel D. Procaccia"," It is common to see a handful of reviewers reject a highly novel paper,
+because they view, say, extensive experiments as far more important than
+novelty, whereas the community as a whole would have embraced the paper. More
+generally, the disparate mapping of criteria scores to final recommendations by
+different reviewers is a major source of inconsistency in peer review. In this
+paper we present a framework --- based on $L(p,q)$-norm empirical risk
+minimization --- for learning the community's aggregate mapping. We draw on
+computational social choice to identify desirable values of $p$ and $q$;
+specifically, we characterize $p=q=1$ as the only choice that satisfies three
+natural axiomatic properties. Finally, we implement and apply our approach to
+reviews from IJCAI 2017.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.09057
+"
+Term Set Expansion based NLP Architect by Intel AI Lab","Jonathan Mamou, Oren Pereg, Moshe Wasserblat, Alon Eirew, Yael Green, Shira Guskin, Peter Izsak, Daniel Korat"," We present SetExpander, a corpus-based system for expanding a seed set of
+terms into amore complete set of terms that belong to the same semantic class.
+SetExpander implements an iterative end-to-end workflow. It enables users to
+easily select a seed set of terms, expand it, view the expanded set, validate
+it, re-expand the validated set and store it, thus simplifying the extraction
+of domain-specific fine-grained semantic classes.SetExpander has been used
+successfully in real-life use cases including integration into an automated
+recruitment system and an issues and defects resolution system. A video demo of
+SetExpander is available at
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08953
+"
+Discriminative Deep Dyna-Q: Robust Planning for Dialogue Policy Learning","Shang-Yu Su, Xiujun Li, Jianfeng Gao, Jingjing Liu, Yun-Nung Chen"," This paper presents a Discriminative Deep Dyna-Q (D3Q) approach to improving
+the effectiveness and robustness of Deep Dyna-Q (DDQ), a recently proposed
+framework that extends the Dyna-Q algorithm to integrate planning for
+task-completion dialogue policy learning. To obviate DDQ's high dependency on
+the quality of simulated experiences, we incorporate an RNN-based discriminator
+in D3Q to differentiate simulated experience from real user experience in order
+to control the quality of training data. Experiments show that D3Q
+significantly outperforms DDQ by controlling the quality of simulated
+experience used for planning. The effectiveness and robustness of D3Q is
+further demonstrated in a domain extension setting, where the agent's
+capability of adapting to a changing environment is tested.
+",(Submitted on 28 Aug 2018),https://arxiv.org/abs/1808.09442
+"
+What Makes Reading Comprehension Questions Easier?","Saku Sugawara, Kentaro Inui, Satoshi Sekine, Akiko Aizawa"," A challenge in creating a dataset for machine reading comprehension (MRC) is
+to collect questions that require a sophisticated understanding of language to
+answer beyond using superficial cues. In this work, we investigate what makes
+questions easier across recent 12 MRC datasets with three question styles
+(answer extraction, description, and multiple choice). We propose to employ
+simple heuristics to split each dataset into easy and hard subsets and examine
+the performance of two baseline models for each of the subsets. We then
+manually annotate questions sampled from each subset with both validity and
+requisite reasoning skills to investigate which skills explain the difference
+between easy and hard questions. From this study, we observed that (i) the
+baseline performances for the hard subsets remarkably degrade compared to those
+of entire datasets, (ii) hard questions require knowledge inference and
+multiple-sentence reasoning in comparison with easy questions, and (iii)
+multiple-choice questions tend to require a broader range of reasoning skills
+than answer extraction and description questions. These results suggest that
+one might overestimate recent advances in MRC.
+",(Submitted on 28 Aug 2018),https://arxiv.org/abs/1808.09384
+"
+Bridging Knowledge Gaps in Neural Entailment via Symbolic Models","Dongyeop Kang, Tushar Khot, Ashish Sabharwal, Peter Clark"," Most textual entailment models focus on lexical gaps between the premise text
+and the hypothesis, but rarely on knowledge gaps. We focus on filling these
+knowledge gaps in the Science Entailment task, by leveraging an external
+structured knowledge base (KB) of science facts. Our new architecture combines
+standard neural entailment models with a knowledge lookup module. To facilitate
+this lookup, we propose a fact-level decomposition of the hypothesis, and
+verifying the resulting sub-facts against both the textual premise and the
+structured KB. Our model, NSnet, learns to aggregate predictions from these
+heterogeneous data formats. On the SciTail dataset, NSnet outperforms a simpler
+combination of the two predictions by 3% and the base entailment model by 5%.
+",(Submitted on 28 Aug 2018),https://arxiv.org/abs/1808.09333
+"
+Investigating Human + Machine Complementarity for Recidivism Predictions","Sarah Tan, Julius Adebayo, Kori Inkpen, Ece Kamar"," When might human input help (or not) when assessing risk in fairness-related
+domains? Dressel and Farid asked Mechanical Turk workers to evaluate a subset
+of individuals in the ProPublica COMPAS data set for risk of recidivism, and
+concluded that COMPAS predictions were no more accurate or fair than
+predictions made by humans. We delve deeper into this claim in this paper. We
+construct a Human Risk Score based on the predictions made by multiple
+Mechanical Turk workers on the same individual, study the agreement and
+disagreement between COMPAS and Human Scores on subgroups of individuals, and
+construct hybrid Human+AI models to predict recidivism. Our key finding is that
+on this data set, human and COMPAS decision making differed, but not in ways
+that could be leveraged to significantly improve ground truth prediction. We
+present the results of our analyses and suggestions for how machine and human
+input may have complementary strengths to address challenges in the fairness
+domain.
+",(Submitted on 28 Aug 2018),https://arxiv.org/abs/1808.09123
+"
+Review Helpfulness Assessment based on Convolutional Neural Network","Xianshan Qu, Xiaopeng Li, John R. Rose"," In this paper we describe the implementation of a convolutional neural
+network (CNN) used to assess online review helpfulness. To our knowledge, this
+is the first use of this architecture to address this problem. We explore the
+impact of two related factors impacting CNN performance: different word
+embedding initializations and different input review lengths. We also propose
+an approach to combining rating star information with review text to further
+improve prediction accuracy. We demonstrate that this can improve the overall
+accuracy by 2%. Finally, we evaluate the method on a benchmark dataset and show
+an improvement in accuracy relative to published results for traditional
+methods of 2.5% for a model trained using only review text and 4.24% for a
+model trained on a combination of rating star information and review text.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.09016
+"
+Behavior Trees as a Representation for Medical Procedures","Blake Hannaford, Randall Bly, Ian Humphreys, Mark Whipple"," Objective: Effective collaboration between machines and clinicians requires
+flexible data structures to represent medical processes and clinical practice
+guidelines. Such a data structure could enable effective turn-taking between
+human and automated components of a complex treatment, accurate on-line
+monitoring of clinical treatments (for example to detect medical errors), or
+automated treatment systems (such as future medical robots) whose overall
+treatment plan is understandable and auditable by human experts.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08954
+"
+Water Disaggregation via Shape Features based Bayesian Discriminative  Sparse Coding","Bingsheng Wang, Xuchao Zhang, Chang-Tien Lu, Feng Chen"," As the issue of freshwater shortage is increasing daily, it is critical to
+take effective measures for water conservation. According to previous studies,
+device level consumption could lead to significant freshwater conservation.
+Existing water disaggregation methods focus on learning the signatures for
+appliances; however, they are lack of the mechanism to accurately discriminate
+parallel appliances' consumption. In this paper, we propose a Bayesian
+Discriminative Sparse Coding model using Laplace Prior (BDSC-LP) to extensively
+enhance the disaggregation performance. To derive discriminative basis
+functions, shape features are presented to describe the low-sampling-rate water
+consumption patterns. A Gibbs sampling based inference method is designed to
+extend the discriminative capability of the disaggregation dictionaries.
+Extensive experiments were performed to validate the effectiveness of the
+proposed model using both real-world and synthetic datasets.
+",(Submitted on 26 Aug 2018),https://arxiv.org/abs/1808.08951
+"
+Improving Information Extraction from Images with Learned Semantic  Models","Stephan Baier, Yunpu Ma, Volker Tresp"," Many applications require an understanding of an image that goes beyond the
+simple detection and classification of its objects. In particular, a great deal
+of semantic information is carried in the relationships between objects. We
+have previously shown that the combination of a visual model and a statistical
+semantic prior model can improve on the task of mapping images to their
+associated scene description. In this paper, we review the model and compare it
+to a novel conditional multi-way model for visual relationship detection, which
+does not include an explicitly trained visual prior model. We also discuss
+potential relationships between the proposed methods and memory models of the
+human brain.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08941
+"
+Theoretical Foundations of the A2RD Project: Part I","Juliao Braga, Joao Nuno Silva, Patricia Takako Endo, Nizam Omar"," This article identifies and discusses the theoretical foundations that were
+considered in the design of the A2RD model. In addition to the points
+considered, references are made to the studies available and considered in the
+approach.
+",(Submitted on 27 Aug 2018 (,https://arxiv.org/abs/1808.08794
+"
+Autonomous Driving without a Burden: View from Outside with Elevated  LiDAR","Nalin Jayaweera, Nandana Rajatheva, Matti Latva-aho"," The current autonomous driving architecture places a heavy burden in signal
+processing for the graphics processing units (GPUs) in the car. This directly
+transforms into battery drain and lower energy efficiency, crucial factors in
+electric vehicles. This is due to the high bit rate of the captured video and
+other sensing inputs, mainly due to Light Detection and Ranging (LiDAR) sensor
+at the top of the car which is an essential feature in todays autonomous
+vehicles. LiDAR is needed to obtain a high precision map for the vehicle AI to
+make relevant decisions. However, this is still a quite restricted view from
+the car. This is the same even in the case of cars without a LiDAR such as
+Telsa. The existing LiDARs and the cameras have limited horizontal and vertical
+fields of visions. In all cases it can be argued that precision is lower, given
+the smaller map generated. This also results in the accumulation of a huge
+amount of data in the order of several TBs in a day, the storage of which
+becomes challenging. If we are to reduce the effort for the processing units
+inside the car, we need to uplink the data to edge or an appropriately placed
+cloud. However, the required data rates in the order of several Gbps are
+difficult to be met even with the advent of 5G. Therefore, we propose to have a
+coordinated set of LiDAR's outside at an elevation which can provide an
+integrated view with a much larger field of vision (FoV) to a centralized
+decision making body which then sends the required control actions to the
+vehicles with a lower bit rate in the downlink and with the required latency.
+The calculations we have based on industry standard equipment from several
+manufacturers show that this is not just a concept but a feasible system which
+can be implemented.
+",(Submitted on 26 Aug 2018),https://arxiv.org/abs/1808.08617
+"
+An Incremental Construction of Deep Neuro Fuzzy System for Continual  Learning of Non-stationary Data Streams","Mahardhika Pratama, Witold Pedrycz, Geoffrey I. Webb"," Existing fuzzy neural networks (FNNs) are mostly developed under a shallow
+network configuration having lower generalization power than those of deep
+structures. This paper proposes a novel self-organizing deep fuzzy neural
+network, namely deep evolving fuzzy neural networks (DEVFNN). Fuzzy rules can
+be automatically extracted from data streams or removed if they play little
+role during their lifespan. The structure of the network can be deepened on
+demand by stacking additional layers using a drift detection method which not
+only detects the covariate drift, variations of input space, but also
+accurately identifies the real drift, dynamic changes of both feature space and
+target space. DEVFNN is developed under the stacked generalization principle
+via the feature augmentation concept where a recently developed algorithm,
+namely Generic Classifier (gClass), drives the hidden layer. It is equipped by
+an automatic feature selection method which controls activation and
+deactivation of input attributes to induce varying subsets of input features. A
+deep network simplification procedure is put forward using the concept of
+hidden layer merging to prevent uncontrollable growth of input space dimension
+due to the nature of feature augmentation approach in building a deep network
+structure. DEVFNN works in the sample-wise fashion and is compatible for data
+stream applications. The efficacy of DEVFNN has been thoroughly evaluated using
+six datasets with non-stationary properties under the prequential
+test-then-train protocol. It has been compared with four state-of the art data
+stream methods and its shallow counterpart where DEVFNN demonstrates
+improvement of classification accuracy.
+",(Submitted on 26 Aug 2018),https://arxiv.org/abs/1808.08517
+"
+FinBrain: When Finance Meets AI 2.0","Xiaolin Zheng, Mengying Zhu, Qibing Li, Chaochao Chen, Yanchao Tan"," Artificial intelligence (AI) is the core technology of technological
+revolution and industrial transformation. As one of the new intelligent needs
+in the AI 2.0 era, financial intelligence has elicited much attention from the
+academia and industry. In our current dynamic capital market, financial
+intelligence demonstrates a fast and accurate machine learning capability to
+handle complex data and has gradually acquired the potential to become a
+""financial brain"". In this work, we survey existing studies on financial
+intelligence. First, we describe the concept of financial intelligence and
+elaborate on its position in the financial technology field. Second, we
+introduce the development of financial intelligence and review state-of-the-art
+techniques in wealth management, risk management, financial security, financial
+consulting, and blockchain. Finally, we propose a research framework called
+FinBrain and summarize four open issues, namely, explainable financial agents
+and causality, perception and prediction under uncertainty, risk-sensitive and
+robust decision making, and multi-agent game and mechanism design. We believe
+that these research directions can lay the foundation for the development of AI
+2.0 in the finance field.
+",(Submitted on 26 Aug 2018),https://arxiv.org/abs/1808.08497
+"
+Deep Emotion: A Computational Model of Emotion Using Deep Neural  Networks","Chie Hieida, Takato Horii, Takayuki Nagai"," Emotions are very important for human intelligence. For example, emotions are
+closely related to the appraisal of the internal bodily state and external
+stimuli. This helps us to respond quickly to the environment. Another important
+perspective in human intelligence is the role of emotions in decision-making.
+Moreover, the social aspect of emotions is also very important. Therefore, if
+the mechanism of emotions were elucidated, we could advance toward the
+essential understanding of our natural intelligence. In this study, a model of
+emotions is proposed to elucidate the mechanism of emotions through the
+computational model. Furthermore, from the viewpoint of partner robots, the
+model of emotions may help us to build robots that can have empathy for humans.
+To understand and sympathize with people's feelings, the robots need to have
+their own emotions. This may allow robots to be accepted in human society. The
+proposed model is implemented using deep neural networks consisting of three
+modules, which interact with each other. Simulation results reveal that the
+proposed model exhibits reasonable behavior as the basic mechanism of emotion.
+",(Submitted on 25 Aug 2018),https://arxiv.org/abs/1808.08447
+"
+Inductive Learning of Answer Set Programs from Noisy Examples","Mark Law, Alessandra Russo, Krysia Broda"," In recent years, non-monotonic Inductive Logic Programming has received
+growing interest. Specifically, several new learning frameworks and algorithms
+have been introduced for learning under the answer set semantics, allowing the
+learning of common-sense knowledge involving defaults and exceptions, which are
+essential aspects of human reasoning. In this paper, we present a
+noise-tolerant generalisation of the learning from answer sets framework. We
+evaluate our ILASP3 system, both on synthetic and on real datasets, represented
+in the new framework. In particular, we show that on many of the datasets
+ILASP3 achieves a higher accuracy than other ILP systems that have previously
+been applied to the datasets, including a recently proposed differentiable
+learning framework.
+",(Submitted on 25 Aug 2018),https://arxiv.org/abs/1808.08441
+"
+A Tutorial on Modular Ontology Modeling with Ontology Design Patterns:  The Cooking Recipes Ontology","Pascal Hitzler, Adila Krisnadhi"," We provide a detailed example for modular ontology modeling based on ontology
+design patterns.
+",(Submitted on 25 Aug 2018),https://arxiv.org/abs/1808.08433
+"
+Adaptive Grey-Box Fuzz-Testing with Thompson Sampling","Siddharth Karamcheti, Gideon Mann, David Rosenberg"," Fuzz testing, or ""fuzzing,"" refers to a widely deployed class of techniques
+for testing programs by generating a set of inputs for the express purpose of
+finding bugs and identifying security flaws. Grey-box fuzzing, the most popular
+fuzzing strategy, combines light program instrumentation with a data driven
+process to generate new program inputs. In this work, we present a machine
+learning approach that builds on AFL, the preeminent grey-box fuzzer, by
+adaptively learning a probability distribution over its mutation operators on a
+program-specific basis. These operators, which are selected uniformly at random
+in AFL and mutational fuzzers in general, dictate how new inputs are generated,
+a core part of the fuzzer's efficacy. Our main contributions are two-fold:
+First, we show that a sampling distribution over mutation operators estimated
+from training programs can significantly improve performance of AFL. Second, we
+introduce a Thompson Sampling, bandit-based optimization approach that
+fine-tunes the mutator distribution adaptively, during the course of fuzzing an
+individual program. A set of experiments across complex programs demonstrates
+that tuning the mutational operator distribution generates sets of inputs that
+yield significantly higher code coverage and finds more crashes faster and more
+reliably than both baseline versions of AFL as well as other AFL-based learning
+approaches.
+",(Submitted on 24 Aug 2018),https://arxiv.org/abs/1808.08256
+"
+Realizing quantum linear regression with auxiliary qumodes","Dan-Bo Zhang, Zheng-Yuan Xue, Shi-Liang Zhu, Z. D. Wang"," In order to exploit quantum advantages, quantum algorithms are indispensable
+for operating machine learning with quantum computers. We here propose an
+intriguing hybrid approach of quantum information processing for quantum linear
+regression, which utilizes both discrete and continuous quantum variables, in
+contrast to existing wisdoms based solely upon discrete qubits. In our
+framework, data information is encoded in a qubit system, while information
+processing is tackled using auxiliary continuous qumodes via qubit-qumode
+interactions. Moreover, it is also elaborated that finite squeezing is quite
+helpful for efficiently running the quantum algorithms in realistic setup.
+Comparing with an all-qubit approach, the present hybrid approach is more
+efficient and feasible for implementing quantum algorithms, still retaining
+exponential quantum speed-up.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08888
+"
+BézierGAN: Automatic Generation of Smooth Curves from Interpretable  Low-Dimensional Parameters","Wei Chen, Mark Fuge"," Many real-world objects are designed by smooth curves, especially in the
+domain of aerospace and ship, where aerodynamic shapes (e.g., airfoils) and
+hydrodynamic shapes (e.g., hulls) are designed. To facilitate the design
+process of those objects, we propose a deep learning based generative model
+that can synthesize smooth curves. The model maps a low-dimensional latent
+representation to a sequence of discrete points sampled from a rational
+B\'ezier curve. We demonstrate the performance of our method in completing both
+synthetic and real-world generative tasks. Results show that our method can
+generate diverse and realistic curves, while preserving consistent shape
+variation in the latent space, which is favorable for latent space design
+optimization or design space exploration.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08871
+"
+A Study of Reinforcement Learning for Neural Machine Translation","Lijun Wu, Fei Tian, Tao Qin, Jianhuang Lai, Tie-Yan Liu"," Recent studies have shown that reinforcement learning (RL) is an effective
+approach for improving the performance of neural machine translation (NMT)
+system. However, due to its instability, successfully RL training is
+challenging, especially in real-world systems where deep models and large
+datasets are leveraged. In this paper, taking several large-scale translation
+tasks as testbeds, we conduct a systematic study on how to train better NMT
+models using reinforcement learning. We provide a comprehensive comparison of
+several important factors (e.g., baseline reward, reward shaping) in RL
+training. Furthermore, to fill in the gap that it remains unclear whether RL is
+still beneficial when monolingual data is used, we propose a new method to
+leverage RL to further boost the performance of NMT systems trained with
+source/target monolingual data. By integrating all our findings, we obtain
+competitive results on WMT14 English- German, WMT17 English-Chinese, and WMT17
+Chinese-English translation tasks, especially setting a state-of-the-art
+performance on WMT17 Chinese-English translation task.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08866
+"
+Summarizing Opinions: Aspect Extraction Meets Sentiment Prediction and  They Are Both Weakly Supervised","Stefanos Angelidis, Mirella Lapata"," We present a neural framework for opinion summarization from online product
+reviews which is knowledge-lean and only requires light supervision (e.g., in
+the form of product domain labels and user-provided ratings). Our method
+combines two weakly supervised components to identify salient opinions and form
+extractive summaries from multiple reviews: an aspect extractor trained under a
+multi-task objective, and a sentiment predictor based on multiple instance
+learning. We introduce an opinion summarization dataset that includes a
+training set of product reviews from six diverse domains and human-annotated
+development and test sets with gold standard aspect annotations, salience
+labels, and opinion summaries. Automatic evaluation shows significant
+improvements over baselines, and a large-scale study indicates that our opinion
+summaries are preferred by human judges according to multiple criteria.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08858
+"
+Adaptive Structural Learning of Deep Belief Network for Medical  Examination Data and Its Knowledge Extraction by using C4.5","Shin Kamada, Takumi Ichimura, Toshihide Harada"," Deep Learning has a hierarchical network architecture to represent the
+complicated feature of input patterns. The adaptive structural learning method
+of Deep Belief Network (DBN) has been developed. The method can discover an
+optimal number of hidden neurons for given input data in a Restricted Boltzmann
+Machine (RBM) by neuron generation-annihilation algorithm, and generate a new
+hidden layer in DBN by the extension of the algorithm. In this paper, the
+proposed adaptive structural learning of DBN was applied to the comprehensive
+medical examination data for the cancer prediction. The prediction system shows
+higher classification accuracy (99.8% for training and 95.5% for test) than the
+traditional DBN. Moreover, the explicit knowledge with respect to the relation
+between input and output patterns was extracted from the trained DBN network by
+C4.5. Some characteristics extracted in the form of IF-THEN rules to find an
+initial cancer at the early stage were reported in this paper.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08777
+"
+Learning Multilingual Word Embeddings in Latent Metric Space: A  Geometric Approach","Pratik Jawanpuria, Arjun Balgovind, Anoop Kunchukuttan, Bamdev Mishra"," We propose a novel geometric approach for learning bilingual mappings given
+monolingual embeddings and a bilingual dictionary. Our approach decouples
+learning the transformation from the source language to the target language
+into (a) learning rotations for language-specific embeddings to align them to a
+common space, and (b) learning a similarity metric in the common space to model
+similarities between the embeddings. We model the bilingual mapping problem as
+an optimization problem on smooth Riemannian manifolds. We show that our
+approach outperforms previous approaches on the bilingual lexicon induction and
+cross-lingual word similarity tasks. We also generalize our framework to
+represent multiple languages in a common latent space. In particular, the
+latent space representations for several languages are learned jointly, given
+bilingual dictionaries for multiple language pairs. We illustrate the
+effectiveness of joint learning for multiple languages in zero-shot word
+translation setting.
+",(Submitted on 27 Aug 2018 (,https://arxiv.org/abs/1808.08773
+"
+What Makes Natural Scene Memorable?","Jiaxin Lu, Mai Xu, Ren Yang, Zulin Wang"," Recent studies on image memorability have shed light on the visual features
+that make generic images, object images or face photographs memorable. However,
+a clear understanding and reliable estimation of natural scene memorability
+remain elusive. In this paper, we provide an attempt to answer: ""what exactly
+makes natural scene memorable"". Specifically, we first build LNSIM, a
+large-scale natural scene image memorability database (containing 2,632 images
+and memorability annotations). Then, we mine our database to investigate how
+low-, middle- and high-level handcrafted features affect the memorability of
+natural scene. In particular, we find that high-level feature of scene category
+is rather correlated with natural scene memorability. Thus, we propose a deep
+neural network based natural scene memorability (DeepNSM) predictor, which
+takes advantage of scene category. Finally, the experimental results validate
+the effectiveness of DeepNSM.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08754
+"
+Generalisation in humans and deep neural networks","Robert Geirhos, Carlos R. Medina Temme, Jonas Rauber, Heiko H. Schuett, Matthias Bethge, Felix A. Wichmann"," We compare the robustness of humans and current convolutional deep neural
+networks (DNNs) on object recognition under twelve different types of image
+degradations. First, using three well known DNNs (ResNet-152, VGG-19,
+GoogLeNet) we find the human visual system to be more robust to nearly all of
+the tested image manipulations, and we observe progressively diverging
+classification error-patterns between humans and DNNs when the signal gets
+weaker. Secondly, we show that DNNs trained directly on distorted images
+consistently surpass human performance on the exact distortion types they were
+trained on, yet they display extremely poor generalisation abilities when
+tested on other distortion types. For example, training on salt-and-pepper
+noise does not imply robustness on uniform white noise and vice versa. Thus,
+changes in the noise distribution between training and testing constitutes a
+crucial challenge to deep learning vision systems that can be systematically
+addressed in a lifelong machine learning approach. Our new dataset consisting
+of 83K carefully measured human psychophysical trials provide a useful
+reference for lifelong robustness against image degradations set by the human
+visual system.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08750
+"
+Predefined Sparseness in Recurrent Sequence Models","Thomas Demeester, Johannes Deleu, Fréderic Godin, Chris Develder"," Inducing sparseness while training neural networks has been shown to yield
+models with a lower memory footprint but similar effectiveness to dense models.
+However, sparseness is typically induced starting from a dense model, and thus
+this advantage does not hold during training. We propose techniques to enforce
+sparseness upfront in recurrent sequence models for NLP applications, to also
+benefit training. First, in language modeling, we show how to increase hidden
+state sizes in recurrent layers without increasing the number of parameters,
+leading to more expressive models. Second, for sequence labeling, we show that
+word embeddings with predefined sparseness lead to similar performance as dense
+embeddings, at a fraction of the number of trainable parameters.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08720
+"
+Generating Text through Adversarial Training using Skip-Thought Vectors",Afroz Ahamad," In the past few years, various advancements have been made in generative
+models owing to the formulation of Generative Adversarial Networks (GANs). GANs
+have been shown to perform exceedingly well on a wide variety of tasks
+pertaining to image generation and style transfer. In the field of Natural
+Language Processing, word embeddings such as word2vec and GLoVe are
+state-of-the-art methods for applying neural network models on textual data.
+Attempts have been made for utilizing GANs with word embeddings for text
+generation. This work presents an approach to text generation using
+Skip-Thought sentence embeddings in conjunction with GANs based on gradient
+penalty functions and f-measures. The results of using sentence embeddings with
+GANs for generating text conditioned on input information are comparable to the
+approaches where word embeddings are used.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08703
+"
+Augmenting Bottleneck Features of Deep Neural Network Employing Motor  State for Speech Recognition at Humanoid Robots","Moa Lee, Joon Hyuk Chang"," As for the humanoid robots, the internal noise, which is generated by motors,
+fans and mechanical components when the robot is moving or shaking its body,
+severely degrades the performance of the speech recognition accuracy. In this
+paper, a novel speech recognition system robust to ego-noise for humanoid
+robots is proposed, in which on/off state of the motor is employed as auxiliary
+information for finding the relevant input features. For this, we consider the
+bottleneck features, which have been successfully applied to deep neural
+network (DNN) based automatic speech recognition (ASR) system. When learning
+the bottleneck features to catch, we first exploit the motor on/off state data
+as supplementary information in addition to the acoustic features as the input
+of the first deep neural network (DNN) for preliminary acoustic modeling. Then,
+the second DNN for primary acoustic modeling employs both the bottleneck
+features tossed from the first DNN and the acoustics features. When the
+proposed method is evaluated in terms of phoneme error rate (PER) on TIMIT
+database, the experimental results show that achieve obvious improvement (11%
+relative) is achieved by our algorithm over the conventional systems.
+",(Submitted on 27 Aug 2018),https://arxiv.org/abs/1808.08702
+"
+Adversarially Regularising Neural NLI Models to Integrate Logical  Background Knowledge","Pasquale Minervini, Sebastian Riedel"," Adversarial examples are inputs to machine learning models designed to cause
+the model to make a mistake. They are useful for understanding the shortcomings
+of machine learning models, interpreting their results, and for regularisation.
+In NLP, however, most example generation strategies produce input text by using
+known, pre-specified semantic transformations, requiring significant manual
+effort and in-depth understanding of the problem and domain. In this paper, we
+investigate the problem of automatically generating adversarial examples that
+violate a set of given First-Order Logic constraints in Natural Language
+Inference (NLI). We reduce the problem of identifying such adversarial examples
+to a combinatorial optimisation problem, by maximising a quantity measuring the
+degree of violation of such constraints and by using a language model for
+generating linguistically-plausible examples. Furthermore, we propose a method
+for adversarially regularising neural NLI models for incorporating background
+knowledge. Our results show that, while the proposed method does not always
+improve results on the SNLI and MultiNLI datasets, it significantly and
+consistently increases the predictive accuracy on adversarially-crafted
+datasets -- up to a 79.6% relative improvement -- while drastically reducing
+the number of background knowledge violations. Furthermore, we show that
+adversarial examples transfer among model architectures, and that the proposed
+adversarial training procedure improves the robustness of NLI models to
+adversarial examples.
+",(Submitted on 26 Aug 2018),https://arxiv.org/abs/1808.08609
+"
+Automatic 3D bi-ventricular segmentation of cardiac images by a  shape-constrained multi-task deep learning approach","Jinming Duan, Ghalib Bello, Jo Schlemper, Wenjia Bai, Timothy J W Dawes, Carlo Biffi, Antonio de Marvao, Georgia Doumou, Declan P O'Regan, Daniel Rueckert"," Deep learning approaches have achieved state-of-the-art performance in
+cardiac magnetic resonance (CMR) image segmentation. However, most approaches
+have focused on learning image intensity features for segmentation, whereas the
+incorporation of anatomical shape priors has received less attention. In this
+paper, we combine a multi-task deep learning approach with atlas propagation to
+develop a shape-constrained bi-ventricular segmentation pipeline for short-axis
+CMR volumetric images. The pipeline first employs a fully convolutional network
+(FCN) that learns segmentation and landmark localisation tasks simultaneously.
+The architecture of the proposed FCN uses a 2.5D representation, thus combining
+the computational advantage of 2D FCNs networks and the capability of
+addressing 3D spatial consistency without compromising segmentation accuracy.
+Moreover, the refinement step is designed to explicitly enforce a shape
+constraint and improve segmentation quality. This step is effective for
+overcoming image artefacts (e.g. due to different breath-hold positions and
+large slice thickness), which preclude the creation of anatomically meaningful
+3D cardiac shapes. The proposed pipeline is fully automated, due to network's
+ability to infer landmarks, which are then used downstream in the pipeline to
+initialise atlas propagation. We validate the pipeline on 1831 healthy subjects
+and 649 subjects with pulmonary hypertension. Extensive numerical experiments
+on the two datasets demonstrate that our proposed method is robust and capable
+of producing accurate, high-resolution and anatomically smooth bi-ventricular
+3D models, despite the artefacts in input CMR volumes.
+",(Submitted on 26 Aug 2018 (,https://arxiv.org/abs/1808.08578
+"
+DeepTracker: Visualizing the Training Process of Convolutional Neural  Networks","Dongyu Liu, Weiwei Cui, Kai Jin, Yuxiao Guo, Huamin Qu"," Deep convolutional neural networks (CNNs) have achieved remarkable success in
+various fields. However, training an excellent CNN is practically a
+trial-and-error process that consumes a tremendous amount of time and computer
+resources. To accelerate the training process and reduce the number of trials,
+experts need to understand what has occurred in the training process and why
+the resulting CNN behaves as such. However, current popular training platforms,
+such as TensorFlow, only provide very little and general information, such as
+training/validation errors, which is far from enough to serve this purpose. To
+bridge this gap and help domain experts with their training tasks in a
+practical environment, we propose a visual analytics system, DeepTracker, to
+facilitate the exploration of the rich dynamics of CNN training processes and
+to identify the unusual patterns that are hidden behind the huge amount of
+training log. Specifically,we combine a hierarchical index mechanism and a set
+of hierarchical small multiples to help experts explore the entire training log
+from different levels of detail. We also introduce a novel cube-style
+visualization to reveal the complex correlations among multiple types of
+heterogeneous training data including neuron weights, validation images, and
+training iterations. Three case studies are conducted to demonstrate how
+DeepTracker provides its users with valuable knowledge in an industry-level CNN
+training process, namely in our case, training ResNet-50 on the ImageNet
+dataset. We show that our method can be easily applied to other
+state-of-the-art ""very deep"" CNN models.
+",(Submitted on 26 Aug 2018),https://arxiv.org/abs/1808.08531
+"
+BOP: Benchmark for 6D Object Pose Estimation","Tomas Hodan, Frank Michel, Eric Brachmann, Wadim Kehl, Anders Glent Buch, Dirk Kraft, Bertram Drost, Joel Vidal, Stephan Ihrke, Xenophon Zabulis, Caner Sahin, Fabian Manhardt, Federico Tombari, Tae-Kyun Kim, Jiri Matas, Carsten Rother"," We propose a benchmark for 6D pose estimation of a rigid object from a single
+RGB-D input image. The training data consists of a texture-mapped 3D object
+model or images of the object in known 6D poses. The benchmark comprises of: i)
+eight datasets in a unified format that cover different practical scenarios,
+including two new datasets focusing on varying lighting conditions, ii) an
+evaluation methodology with a pose-error function that deals with pose
+ambiguities, iii) a comprehensive evaluation of 15 diverse recent methods that
+captures the status quo of the field, and iv) an online evaluation system that
+is open for continuous submission of new results. The evaluation shows that
+methods based on point-pair features currently perform best, outperforming
+template matching methods, learning-based methods and methods based on 3D local
+features. The project website is available at bop.felk.cvut.cz.
+",(Submitted on 24 Aug 2018),https://arxiv.org/abs/1808.08319
+"
+Brain Biomarker Interpretation in ASD Using Deep Learning and fMRI","Xiaoxiao Li, Nicha C. Dvornek, Juntang Zhuang, Pamela Ventola, James S. Duncan"," Autism spectrum disorder (ASD) is a complex neurodevelopmental disorder.
+Finding the biomarkers associated with ASD is extremely helpful to understand
+the underlying roots of the disorder and can lead to earlier diagnosis and more
+targeted treatment. Although Deep Neural Networks (DNNs) have been applied in
+functional magnetic resonance imaging (fMRI) to identify ASD, understanding the
+data-driven computational decision making procedure has not been previously
+explored. Therefore, in this work, we address the problem of interpreting
+reliable biomarkers associated with identifying ASD; specifically, we propose a
+2-stage method that classifies ASD and control subjects using fMRI images and
+interprets the saliency features activated by the classifier. First, we trained
+an accurate DNN classifier. Then, for detecting the biomarkers, different from
+the DNN visualization works in computer vision, we take advantage of the
+anatomical structure of brain fMRI and develop a frequency-normalized sampling
+method to corrupt images. Furthermore, in the ASD vs. control subjects
+classification scenario, we provide a new approach to detect and characterize
+important brain features into three categories. The biomarkers we found by the
+proposed method are robust and consistent with previous findings in the
+literature. We also validate the detected biomarkers by neurological function
+decoding and comparing with the DNN activation maps.
+",(Submitted on 23 Aug 2018),https://arxiv.org/abs/1808.08296
+"
+Controlling Over-generalization and its Effect on Adversarial Examples  Generation and Detection","Mahdieh Abbasi, Arezoo Rajabi, Azadeh Sadat Mozafari, Rakesh B. Bobba, Christian Gagne"," Convolutional Neural Networks (CNNs) allowed improving the state-of-the-art
+for many vision applications. However, naive CNNs suffer from two serious
+issues: vulnerability to adversarial examples and making incorrect but
+confident predictions for out-distribution samples. In this paper, we draw a
+connection between these two issues of CNNs through over-generalization. We
+reveal an augmented CNN (an extra output class added) as a simple yet effective
+end-to-end approach has the capacity for controlling over-generalization. We
+demonstrate training an augmented CNN on only a properly selected natural
+out-distribution dataset and interpolated samples empowers it to classify a
+wide range of unseen out-distribution samples as dustbin. Meanwhile, its
+misclassification rates on a broad spectrum of well-known black-box adversaries
+drop drastically as it classifies a portion of adversaries as dustbin class
+(rejection option) while correctly classifies some of the remaining. However,
+such an augmented CNN is never trained with any types of adversaries. Finally,
+generation of white-box adversarial attacks using augmented CNNs can be harder
+as the attack algorithms have to avoid dustbin regions for generating actual
+adversaries.
+",(Submitted on 21 Aug 2018),https://arxiv.org/abs/1808.08282
+"
+Future Automation Engineering using Structural Graph Convolutional  Neural Networks","Jiang Wan, Blake S. Pollard, Sujit Rokka Chhetri, Palash Goyal, Mohammad Abdullah Al Faruque, Arquimedes Canedo"," The digitalization of automation engineering generates large quantities of
+engineering data that is interlinked in knowledge graphs. Classifying and
+clustering subgraphs according to their functionality is useful to discover
+functionally equivalent engineering artifacts that exhibit different graph
+structures. This paper presents a new graph learning algorithm designed to
+classify engineering data artifacts -- represented in the form of graphs --
+according to their structure and neighborhood features. Our Structural Graph
+Convolutional Neural Network (SGCNN) is capable of learning graphs and
+subgraphs with a novel graph invariant convolution kernel and
+downsampling/pooling algorithm. On a realistic engineering-related dataset, we
+show that SGCNN is capable of achieving ~91% classification accuracy.
+",(Submitted on 24 Aug 2018),https://arxiv.org/abs/1808.08213
+"
+Ontology Reasoning with Deep Neural Networks","Patrick Hohenecker, Thomas Lukasiewicz"," The ability to conduct logical reasoning is a fundamental aspect of
+intelligent behavior, and thus an important problem along the way to
+human-level artificial intelligence. Traditionally, symbolic methods from the
+field of knowledge representation and reasoning have been used to equip agents
+with capabilities that resemble human reasoning qualities. More recently,
+however, there has been an increasing interest in applying alternative
+approaches based on machine learning rather than logic-based formalisms to
+tackle this kind of tasks. Here, we make use of state-of-the-art methods for
+training deep neural networks to devise a novel model that is closely coupled
+to symbolic reasoning methods, and thus able to learn how to effectively
+perform basic ontology reasoning. This term describes an important and at the
+same time very natural kind of problem settings where the rules for conducting
+reasoning are specified alongside with the actual information. Many problems in
+practice may be viewed as such reasoning tasks, which is why the presented
+approach is applicable to a plethora of important real-world problems. To
+demonstrate the effectiveness of the suggested method, we present the outcomes
+of several experiments that have been conducted on both toy datasets as well as
+real-world data, which show that our model learned to perform precise reasoning
+on a number of diverse inference tasks that require comprehensive deductive
+proficiencies. Furthermore, it turned out that the suggested model suffers much
+less from different obstacles that prohibit symbolic reasoning.
+",(Submitted on 24 Aug 2018),https://arxiv.org/abs/1808.07980
+"
+A Century Long Commitment to Assessing Artificial Intelligence and its  Impact on Society","Barbara J. Grosz, Peter Stone"," In September 2016, Stanford's ""One Hundred Year Study on Artificial
+Intelligence"" project (AI100) issued the first report of its planned long-term
+periodic assessment of artificial intelligence (AI) and its impact on society.
+The report, entitled ""Artificial Intelligence and Life in 2030,"" examines eight
+domains of typical urban settings on which AI is likely to have impact over the
+coming years: transportation, home and service robots, healthcare, education,
+public safety and security, low-resource communities, employment and workplace,
+and entertainment. It aims to provide the general public with a scientifically
+and technologically accurate portrayal of the current state of AI and its
+potential and to help guide decisions in industry and governments, as well as
+to inform research and development in the field. This article by the chair of
+the 2016 Study Panel and the inaugural chair of the AI100 Standing Committee
+describes the origins of this ambitious longitudinal study, discusses the
+framing of the inaugural report, and presents the report's main findings. It
+concludes with a brief description of the AI100 project's ongoing efforts and
+planned next steps.
+",(Submitted on 23 Aug 2018),https://arxiv.org/abs/1808.07899
+"
+Different but Equal: Comparing User Collaboration with Digital Personal  Assistants vs. Teams of Expert Agents","Claudio S. Pinhanez, Heloisa Candello, Mauro C. Pichiliani, Marisa Vasconcelos, Melina Guerra, Maíra G. de Bayser, Paulo Cavalin"," This work compares user collaboration with conversational personal assistants
+vs. teams of expert chatbots. Two studies were performed to investigate whether
+each approach affects accomplishment of tasks and collaboration costs.
+Participants interacted with two equivalent financial advice chatbot systems,
+one composed of a single conversational adviser and the other based on a team
+of four experts chatbots. Results indicated that users had different forms of
+experiences but were equally able to achieve their goals. Contrary to the
+expected, there were evidences that in the teamwork situation that users were
+more able to predict agent behavior better and did not have an overhead to
+maintain common ground, indicating similar collaboration costs. The results
+point towards the feasibility of either of the two approaches for user
+collaboration with conversational agents.
+",(Submitted on 24 Aug 2018),https://arxiv.org/abs/1808.08157
+"
+Under the Hood: Using Diagnostic Classifiers to Investigate and Improve  how Language Models Track Agreement Information","Mario Giulianelli, Jack Harding, Florian Mohnert, Dieuwke Hupkes, Willem Zuidema"," How do neural language models keep track of number agreement between subject
+and verb? We show that `diagnostic classifiers', trained to predict number from
+the internal states of a language model, provide a detailed understanding of
+how, when, and where this information is represented. Moreover, they give us
+insight into when and where number information is corrupted in cases where the
+language model ends up making agreement errors. To demonstrate the causal role
+played by the representations we find, we then use agreement information to
+influence the course of the LSTM during the processing of difficult sentences.
+Results from such an intervention reveal a large increase in the language
+model's accuracy. Together, these results show that diagnostic classifiers give
+us an unrivalled detailed look into the representation of linguistic
+information in neural models, and demonstrate that this knowledge can be used
+to improve their performance.
+",(Submitted on 24 Aug 2018),https://arxiv.org/abs/1808.08079
+"
+Approximate Distribution Matching for Sequence-to-Sequence Learning","Wenhu Chen, Guanlin Li, Shujie Liu, Zhirui Zhang, Mu Li, Ming Zhou"," Sequence-to-Sequence models were introduced to tackle many real-life problems
+like machine translation, summarization, image captioning, etc. The standard
+optimization algorithms are mainly based on example-to-example matching like
+maximum likelihood estimation, which is known to suffer from data sparsity
+problem. Here we present an alternate view to explain sequence-to-sequence
+learning as a distribution matching problem, where each source or target
+example is viewed to represent a local latent distribution in the source or
+target domain. Then, we interpret sequence-to-sequence learning as learning a
+transductive model to transform the source local latent distributions to match
+their corresponding target distributions. In our framework, we approximate both
+the source and target latent distributions with recurrent neural networks
+(augmenter). During training, the parallel augmenters learn to better
+approximate the local latent distributions, while the sequence prediction model
+learns to minimize the KL-divergence of the transformed source distributions
+and the approximated target distributions. This algorithm can alleviate the
+data sparsity issues in sequence learning by locally augmenting more unseen
+data pairs and increasing the model's robustness. Experiments conducted on
+machine translation and image captioning consistently demonstrate the
+superiority of our proposed algorithm over the other competing algorithms.
+",(Submitted on 24 Aug 2018 (,https://arxiv.org/abs/1808.08003
+"
+SOTER: Programming Safe Robotics System using Runtime Assurance","Ankush Desai, Shromona Ghosh, Sanjit A. Seshia, Natarajan Shankar, Ashish Tiwari"," Autonomous robots increasingly depend on third-party off-the-shelf components
+and complex machine-learning techniques. This trend makes it challenging to
+provide strong design-time certification of correct operation. To address this
+challenge, we present SOTER, a programming framework that integrates the core
+principles of runtime assurance to enable the use of uncertified controllers,
+while still providing safety guarantees.
+",(Submitted on 23 Aug 2018),https://arxiv.org/abs/1808.07921
