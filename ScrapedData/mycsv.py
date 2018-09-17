@@ -16,8 +16,8 @@ import numpy
 #Importing the Cosine Score Class for calculating the ranking
 from CosineScore import *
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+# reload(sys)
+# sys.setdefaultencoding('utf8')
 
 ###################### DATA Pre-Processing #########################
 
