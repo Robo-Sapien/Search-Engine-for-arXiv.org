@@ -20,32 +20,6 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 ###################### DATA Pre-Processing #########################
-class DataPreprocessor:
-
-	"""Extract data from already scraped web data(stored in .csv files).
-    """
-    rank = []
-    docIndex = []
-    score = []
-    def __init__(self, query, matrix):
-        """Constructor which calculates cosine similarity score for each document"""
-        for j in range(matrix.shape[1]):
-            column = matrix[:,j]
-            self.docIndex.append(j)
-            self.score.append(1 - spatial.distance.cosine(column, query))
-        self.rank = list(reversed([x for _, x in sorted(zip(self.score, self.docIndex))]))
-
-    def getPages(self,start,end):
-        """To get the indices of the douments between the given ranks
-
-        :param start: starting *rank*.
-
-        :param end: rank after the last rank.
-
-        :return: list of document indices for ranks from start to end-1.
-        """
-        return self.rank[start:end]
-
 
 class DataPreprocessor:
 
