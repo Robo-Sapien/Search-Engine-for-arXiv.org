@@ -6,7 +6,7 @@ Documentation for the Code
 
 Cosine Similarity
 ================================
-.. automodule:: CosineScore
+.. automodule:: ScrapedData.CosineScore
    :members:
 
 Process Documents and Queries

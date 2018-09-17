@@ -10,7 +10,8 @@ The following Python packages are required:
 + scipy
 
 ## Documentation
-For code documentation refer to: docs/build/html/index.html
++ For code documentation refer to: docs/build/html/index.html
++ Refer to DesignDocumentation.pdf for design documentation.
 
 ## Installation and Execution
 + Install all the packages and dependencies
