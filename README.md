@@ -1,5 +1,10 @@
 # Domain Specific Search Engine
 
+## Group Members
++ Abhinav Kumar 2015B5A70674H
++ Yashdeep Thorat 2015B5A70675H
++ Shivam Bhagat 2015B5A70460H
+
 ## Requirements
 The following Python packages are required:
 + nltk
