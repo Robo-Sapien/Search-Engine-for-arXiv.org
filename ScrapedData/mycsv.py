@@ -13,48 +13,18 @@ import sys
 from scipy import spatial
 import numpy
 
+#Importing the Cosine Score Class for calculating the ranking
+from CosineScore import *
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 
 
+class DataPreprocessor:
 
-#table = str.maketrans('', '', string.punctuation)
-
-class CosineScore:
-    """Calculate cosine similarity score for each document and rank them
-
-    :param query: query vector
-
-    :param matrix: tf-idf numpy matrix
+	"""Extract data from already scraped web data(stored in .csv files).
     """
-    rank = []
-    docIndex = []
-    score = []
-    def __init__(self, query, matrix):
-        """Constructor which calculates cosine similarity score for each document"""
-        for j in range(matrix.shape[1]):
-            column = matrix[:,j]
-            self.docIndex.append(j)
-            self.score.append(1 - spatial.distance.cosine(column, query))
-        self.rank = list(reversed([x for _, x in sorted(zip(self.score, self.docIndex))]))
-
-    def getPages(self,start,end):
-        """To get the indices of the douments between the given ranks
-
-        :param start: starting *rank*.
-
-        :param end: rank after the last rank.
-
-        :return: list of document indices for ranks from start to end-1.
-        """
-        return self.rank[start:end]
-
-
-class DataPreprocessor: 
-
-	"""Extract data from already scraped web data(stored in .csv files).   
-    """
-	filtered_vocab=[] 
+	filtered_vocab=[]
 	documents=[]
 
 	def dataHandler(self):
@@ -65,12 +35,12 @@ class DataPreprocessor:
         """
 
 
-		filtered_vocab=[] 
+		filtered_vocab=[]
 		documents=[]
 		stop_words = set(stopwords.words('english'))
 		file_list=['CS-AI.csv','CS-DS.csv','CS-GR.csv','CS-IR.csv','CS-LG.csv','Phy-cond-mat.csv','Phy-gr-qc.csv']
 
-		
+
 		for filename in file_list:
 			tokens=[]
 			doc1=[]
@@ -111,10 +81,7 @@ class DataPreprocessor:
 		self.filtered_vocab=filtered_vocab
 		self.documents=documents
 
-
-
-
-
+###################### TF-IDF PROCESSOR #############################
 class TF_IDF:
     '''
     This class will provide the functionality for all the postprocessing
@@ -221,19 +188,19 @@ class TF_IDF:
 
         self.query_vector=query_vector
 
-def main():
-    # query = [0, 1, 0]
-    # matrix = numpy.array([[2, 1, 3], [4, 3, 5], [6, 5, 7]])
+############################### HANDLER #################################
+if __name__ == '__main__':
+
+    #Creating the Parser and extracting the data do it once only later)
     vocab_obj=DataPreprocessor()
     vocab_obj.dataHandler()
+
+    #Processing the tf idf matrix (do it only once in later stage)
     tfidf_solver=TF_IDF()
     tfidf_solver.process_the_matrix(vocab_obj.filtered_vocab,vocab_obj.documents)
     tfidf_solver.process_the_query(vocab_obj.filtered_vocab,["machine","learning"])
-    #
+
+    #Getting the page ranking for the above query
     obj = CosineScore(tfidf_solver.query_vector,tfidf_solver.tf_idf_matrix)
-   #print(tfidf_solver.query_vector.shape[0])
 
     print(obj.getPages(0,10))
-
-if __name__ == '__main__':
-    main()
