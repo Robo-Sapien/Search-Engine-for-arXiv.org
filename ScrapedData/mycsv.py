@@ -13,19 +13,16 @@ import sys
 from scipy import spatial
 import numpy
 
-# reload(sys)
-# sys.setdefaultencoding('utf8')
+#Importing the Cosine Score Class for calculating the ranking
+from CosineScore import *
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
+class DataPreprocessor:
 
-#table = str.maketrans('', '', string.punctuation)
-
-class CosineScore:
-    """Calculate cosine similarity score for each document and rank them
-
-    :param query: query vector
-
-    :param matrix: tf-idf numpy matrix
+	"""Extract data from already scraped web data(stored in .csv files).
     """
     rank = []
     docIndex = []
@@ -111,13 +108,15 @@ class DataPreprocessor:
 		self.filtered_vocab=filtered_vocab
 		self.documents=documents
 
-
-
-
-
+###################### TF-IDF PROCESSOR #############################
 class TF_IDF:
     '''
     This class will provide the functionality for all the postprocessing
+    with the following tasks:
+    1. Process/Load the tfidf matrix (or update it)
+    2. Process the query
+    3. Then finally prove the user with the tfidf vector and the query
+        vector as attributed.
 
     '''
 
@@ -134,6 +133,12 @@ class TF_IDF:
         '''
         Processing the tf-idf matrix and save it as numpy compressed
         matrix.
+
+        :param word_bag: the unique list of the words which will comprise
+                            our dictionary.
+
+        :param doc_word_list: the list of the terms for each of the document
+                                in the corpus. list of list.
         '''
         #Hashing the word_bag with index
         word_bag=dict([(word_bag[i],i) for i in range(len(word_bag))])
@@ -190,7 +195,12 @@ class TF_IDF:
 
     def process_the_query(self,word_bag,query_word_list):
         '''
+        This function will take a query from the user, then make a boolean
+        encoding of the query in the space of the word bag.
 
+        :param word_bag: the list of the unique word in our dictionary
+
+        :param query_word_list: the list of the words in the query
         '''
         #Hashing the word_bag with index
         word_bag=dict([(word_bag[i],i) for i in range(len(word_bag))])
@@ -205,17 +215,20 @@ class TF_IDF:
 
         self.query_vector=query_vector
 
-def main():
-    # query = [0, 1, 0]
-    # matrix = numpy.array([[2, 1, 3], [4, 3, 5], [6, 5, 7]])
+############################### HANDLER #################################
+if __name__ == '__main__':
+
+    #Creating the Parser and extracting the data do it once only later)
     vocab_obj=DataPreprocessor()
     vocab_obj.dataHandler()
+
+    #Processing the tf idf matrix (do it only once in later stage)
     tfidf_solver=TF_IDF()
     tfidf_solver.process_the_matrix(vocab_obj.filtered_vocab,vocab_obj.documents)
     tfidf_solver.process_the_query(vocab_obj.filtered_vocab,["machine","learning"])
-    #
+
+    #Getting the page ranking for the above query
     obj = CosineScore(tfidf_solver.query_vector,tfidf_solver.tf_idf_matrix)
-   #print(tfidf_solver.query_vector.shape[0])
 
     print(obj.getPages(0,10))
 
