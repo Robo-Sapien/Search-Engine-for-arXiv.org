@@ -8,13 +8,13 @@ from nltk.stem import WordNetLemmatizer
 import pandas
 from nltk.corpus import stopwords
 import string
-from string import maketrans
+# from string import maketrans
 import sys
 from scipy import spatial
 import numpy
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+# reload(sys)
+# sys.setdefaultencoding('utf8')
 
 
 
@@ -50,11 +50,11 @@ class CosineScore:
         return self.rank[start:end]
 
 
-class DataPreprocessor: 
+class DataPreprocessor:
 
-	"""Extract data from already scraped web data(stored in .csv files).   
+	"""Extract data from already scraped web data(stored in .csv files).
     """
-	filtered_vocab=[] 
+	filtered_vocab=[]
 	documents=[]
 
 	def dataHandler(self):
@@ -65,12 +65,12 @@ class DataPreprocessor:
         """
 
 
-		filtered_vocab=[] 
+		filtered_vocab=[]
 		documents=[]
 		stop_words = set(stopwords.words('english'))
 		file_list=['CS-AI.csv','CS-DS.csv','CS-GR.csv','CS-IR.csv','CS-LG.csv','Phy-cond-mat.csv','Phy-gr-qc.csv']
 
-		
+
 		for filename in file_list:
 			tokens=[]
 			doc1=[]
@@ -152,12 +152,12 @@ class TF_IDF:
             for term in doc_terms:
             	#print(term)
                 #Getting the term id from the hash map
-                
+
                 try:
                 	term_id=word_bag[term];
                 except Exception as e:
                 	pass
-                
+
 
                 #Adding the contribution of this term of the doc frequency
                 if term_id not in idf_dict.keys():
