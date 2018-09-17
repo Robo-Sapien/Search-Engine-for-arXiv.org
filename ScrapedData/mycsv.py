@@ -332,6 +332,11 @@ filtered_vocab=list(set(filtered_vocab))
 class TF_IDF:
     '''
     This class will provide the functionality for all the postprocessing
+    with the following tasks:
+    1. Process/Load the tfidf matrix (or update it)
+    2. Process the query
+    3. Then finally prove the user with the tfidf vector and the query
+        vector as attributed.
 
     '''
 
@@ -348,6 +353,12 @@ class TF_IDF:
         '''
         Processing the tf-idf matrix and save it as numpy compressed
         matrix.
+
+        :param word_bag: the unique list of the words which will comprise
+                            our dictionary.
+
+        :param doc_word_list: the list of the terms for each of the document
+                                in the corpus. list of list.
         '''
         #Hashing the word_bag with index
         word_bag=dict([(word_bag[i],i) for i in range(len(word_bag))])
@@ -366,12 +377,12 @@ class TF_IDF:
             for term in doc_terms:
             	#print(term)
                 #Getting the term id from the hash map
-                
+
                 try:
                 	term_id=word_bag[term];
                 except Exception as e:
                 	pass
-                
+
 
                 #Adding the contribution of this term of the doc frequency
                 if term_id not in idf_dict.keys():
@@ -404,7 +415,12 @@ class TF_IDF:
 
     def process_the_query(self,word_bag,query_word_list):
         '''
+        This function will take a query from the user, then make a boolean
+        encoding of the query in the space of the word bag.
 
+        :param word_bag: the list of the unique word in our dictionary
+
+        :param query_word_list: the list of the words in the query
         '''
         #Hashing the word_bag with index
         word_bag=dict([(word_bag[i],i) for i in range(len(word_bag))])
