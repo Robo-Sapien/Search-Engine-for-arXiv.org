@@ -18,4 +18,4 @@ For code documentation refer to: docs/build/html/index.html
 papers for that topic.(It will generate csv files containing the title, authors, abstract, date
 URL and Submission date)
 + Run ScrapedData/mycsv.py to create a dictionary and generate the tf-idf matrix
-and process the given query to give the documents with highest cosine similarity score. 
+and process the given query to give the documents with highest cosine similarity score.  
