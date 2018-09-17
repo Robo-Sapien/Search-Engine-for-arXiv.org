@@ -161,7 +161,7 @@ class TF_IDF:
 
 
         #Calculating the final tf idf matrix
-        idf_vector_reshaped=np.reshape(idf_vector, (7968,1))
+        idf_vector_reshaped=np.reshape(idf_vector, (idf_vector.shape[0],1))
         tf_idf_matrix=tf_idf_matrix*idf_vector_reshaped
 
 
