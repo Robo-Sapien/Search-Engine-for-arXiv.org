@@ -85,7 +85,7 @@ for w in vocab:
 #filtered_vocab=list(set(filtered_vocab))
 
 #print(filtered_vocab)
-print(len(filtered_vocab))
+#print(len(filtered_vocab))
 #print(len(vocab))
 #print(documents)
 
@@ -121,7 +121,7 @@ for w2 in vocab:
         filtered_vocab.append(w2)
 
 #filtered_vocab=list(set(filtered_vocab))
-print(len(filtered_vocab))
+#print(len(filtered_vocab))
 
 
 
@@ -156,7 +156,7 @@ for w4 in vocab:
         filtered_vocab.append(w4)
 
 #filtered_vocab=list(set(filtered_vocab))
-print(len(filtered_vocab))
+#print(len(filtered_vocab))
 
 tokens=[]
 doc=[]
@@ -187,7 +187,7 @@ for w6 in vocab:
 
 #filtered_vocab=list(set(filtered_vocab))
 
-print(len(filtered_vocab))
+#print(len(filtered_vocab))
 
 
 tokens=[]
@@ -219,7 +219,7 @@ for w8 in vocab:
 
 #filtered_vocab=list(set(filtered_vocab))
 
-print(len(filtered_vocab))
+#print(len(filtered_vocab))
 
 '''
 tokens=[]
@@ -286,7 +286,7 @@ for w12 in vocab:
         filtered_vocab.append(w12)
 
 #filtered_vocab=list(set(filtered_vocab))
-print(len(filtered_vocab))
+#print(len(filtered_vocab))
 
 
 
@@ -322,10 +322,10 @@ filtered_vocab=list(set(filtered_vocab))
 
 
 #print(filtered_vocab)
-print(len(filtered_vocab))
+#print(len(filtered_vocab))
 
-print(documents)
-print(len(documents))
+#print(documents)
+#print(len(documents))
 
 
 
@@ -339,18 +339,19 @@ class TF_IDF:
     tf_idf_matrix=None
     query_vector=None
 
-    def __init__(self):
+   # def __init__(self):
 
 
-    def load_the_matrix():
+    #def load_the_matrix():
 
-    def process_the_matrix(word_bag,doc_word_list):
+    def process_the_matrix(self,word_bag,doc_word_list):
         '''
         Processing the tf-idf matrix and save it as numpy compressed
         matrix.
         '''
         #Hashing the word_bag with index
         word_bag=dict([(word_bag[i],i) for i in range(len(word_bag))])
+       # print(word_bag)
 
         #Creating the tfidf matrix
         size=(len(word_bag),len(doc_word_list))
@@ -363,8 +364,14 @@ class TF_IDF:
         for doc_num in range(len(doc_word_list)):
             doc_terms=doc_word_list[doc_num]
             for term in doc_terms:
+            	#print(term)
                 #Getting the term id from the hash map
-                term_id=word_bag[term];
+                
+                try:
+                	term_id=word_bag[term];
+                except Exception as e:
+                	pass
+                
 
                 #Adding the contribution of this term of the doc frequency
                 if term_id not in idf_dict.keys():
@@ -379,7 +386,7 @@ class TF_IDF:
         #Now we are done with the term frequency and doc frequency
         #Processing the idf vector
         idf_vector=np.zeros(len(word_bag))
-        for term_id,doc_list in idf_dict:
+        for term_id,doc_list in idf_dict.items():
             idf_vector[term_id]=len(doc_list)
         #Taking the inverse of the
         idf_vector=np.log(len(doc_word_list)/idf_vector)
@@ -389,7 +396,9 @@ class TF_IDF:
 
 
         #Calculating the final tf idf matrix
-        tf_idf_matrix=tf_idf_matrix*idf_vector
+        idf_vector_reshaped=np.reshape(idf_vector, (7968,1))
+        tf_idf_matrix=tf_idf_matrix*idf_vector_reshaped
+
 
         self.tf_idf_matrix=tf_idf_matrix
 
@@ -416,7 +425,12 @@ def main():
 
     tfidf_solver=TF_IDF()
     tfidf_solver.process_the_matrix(filtered_vocab,documents)
-    tfidf_solver.process_the_query(["learning","machine"])
+    tfidf_solver.process_the_query(filtered_vocab,["machine","learning"])
     #
     obj = CosineScore(tfidf_solver.query_vector,tfidf_solver.tf_idf_matrix)
+   #print(tfidf_solver.query_vector.shape[0])
+
     print(obj.getPages(0,10))
+
+if __name__ == '__main__':
+    main()
