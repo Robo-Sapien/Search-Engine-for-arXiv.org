@@ -28,7 +28,17 @@ class SearchQuery:
     '''
 
     ################ DATA ATTRIBUTES ######################
-    queryVector=None
+    queryVector = None
+    tfidfMatrix = None
+	urlList = None
+	titleList = None
+    tfidf = None
+
+    def __init__(self, arg):
+        self.tfidf = np.load('tfidf.npz')
+		self.tfidfMatrix = self.tfidf['matrix']
+		self.urlList = self.tfidf['urls']
+        self.titleList = self.tfidf['titles']
 
     def processQuery(self, word_bag, query_word_list):
         '''
@@ -57,33 +67,23 @@ class SearchQuery:
         self.queryVector=query_vector
 
 ############################### HANDLER #################################
-if __name__ == '__main__':
-    tfidf_solver=SearchQuery()
-    tfidf = np.load('tfidf.npz')
+    def search(self, queryString):
 
-    stop_words = set(stopwords.words('english'))
-    porter_stemmer = PorterStemmer()
-    wordnet_lemmatizer = WordNetLemmatizer()
-    string="Andy"
-    query=[]
-    tokens = word_tokenize(string)
-    query=tokens
-    query=[w.lower() for w in query if (w.isalpha() and w not in stop_words)]
-    query=[(wordnet_lemmatizer.lemmatize(w)) for w in query]
-    query=[porter_stemmer.stem(w) for w in query]
+        stop_words = set(stopwords.words('english'))
+        porter_stemmer = PorterStemmer()
+        wordnet_lemmatizer = WordNetLemmatizer()
+        query = word_tokenize(queryString)
+        query=[w.lower() for w in query if (w.isalpha() and w not in stop_words)]
+        query=[(wordnet_lemmatizer.lemmatize(w)) for w in query]
+        query=[porter_stemmer.stem(w) for w in query]
 
-    tfidf_solver.processQuery( tfidf['vocab'],query)
-    urlList = tfidf['urls']
-    titleList = tfidf['titles']
-    #Getting the page ranking for the above query
+        self.processQuery( tfidf['vocab'],query)
 
-    obj = CosineScore(tfidf_solver.queryVector, tfidf['matrix'])
+        #Getting the page ranking for the above query
+        obj = CosineScore(self.queryVector, self.tfidfMatrix)
 
-    rankList = obj.getPages(10)
-    if len(rankList) == 0:
-        print("No results found")
-    for docIndex in rankList:
-        print("\n")
-        print(titleList[docIndex] + " " + urlList[docIndex])
-    print("\n")
-
+        rankList = obj.getPages(10)
+		finalList = []
+        for docIndex in rankList:
+            finalList.append((self.titleList[docIndex], self.urlList[docIndex])))
+		return finalList
