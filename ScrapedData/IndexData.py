@@ -22,8 +22,10 @@ wordnet_lemmatizer = WordNetLemmatizer()
 class IndexData:
     """Extract data from already scraped web data(stored in .csv files).
     """
-    filtered_vocab=[]
-    documents=[]
+    filtered_vocab = []
+    documents = []
+    urlList = []
+    titleList=[]
 
     def dataHandler(self):
         """(1) Makes a bag of words(vocabulary) after tokenization, stemming, lemmatization & removal of stop words. (2) Makes a list of lists containing tokenized words of documents.
@@ -38,7 +40,6 @@ class IndexData:
         stop_words = set(stopwords.words('english'))
         file_list=['CS-AI.csv','CS-DS.csv','CS-GR.csv','CS-IR.csv','CS-LG.csv','Phy-cond-mat.csv','Phy-gr-qc.csv']
 
-
         for filename in file_list:
             tokens=[]
             doc1=[]
@@ -47,29 +48,37 @@ class IndexData:
             temp=[]
             with open(filename) as csv_file:
                 csv_reader = csv.reader(csv_file)
-                #line_count = 0
+                firstLineFlag = 0
                 for line in csv_reader:
-                    for field in line:
-                        tokens = word_tokenize(field)
-                        #print(tokens)
-                        doc1.extend(tokens)
-                    #print(doc)
-                    doc1=[w.lower() for w in doc1 if (w.isalpha() and w not in stop_words)]
-                    doc1=[(wordnet_lemmatizer.lemmatize(w)) for w in doc1]
-                    doc1=[porter_stemmer.stem(w) for w in doc1]
-                    documents.append(doc1)
-                    words=[w.lower() for w in doc1 if (w.isalpha() and w not in stop_words)]
-                    words=[(wordnet_lemmatizer.lemmatize(w)) for w in words]
-                    words=[porter_stemmer.stem(w) for w in words]
-
-                    #words=[w.lower() for w in doc]
-                    #words = [w.translate(table) for w in doc]
-                    #print(words)
-                    temp=sorted(set(words))
-                    vocab.extend(temp)
-                    temp=[]
-                    doc1=[]
-                    words=[]
+                    if firstLineFlag == 0:
+                        firstLineFlag = 1
+                        pass
+                    else:
+                        columnCount=0
+                        for field in line:
+                            tokens = word_tokenize(field)
+                            columnCount += 1
+                            if columnCount == 1:
+                                self.titleList.append(field.strip('\n'))
+                            if columnCount == 5:
+                                self.urlList.append(field)
+                            doc1.extend(tokens)
+                        #print(doc)
+                        doc1=[w.lower() for w in doc1 if (w.isalpha() and w not in stop_words)]
+                        doc1=[(wordnet_lemmatizer.lemmatize(w)) for w in doc1]
+                        doc1=[porter_stemmer.stem(w) for w in doc1]
+                        documents.append(doc1)
+                        words=[w.lower() for w in doc1 if (w.isalpha() and w not in stop_words)]
+                        words=[(wordnet_lemmatizer.lemmatize(w)) for w in words]
+                        words=[porter_stemmer.stem(w) for w in words]
+                        #words=[w.lower() for w in doc]
+                        #words = [w.translate(table) for w in doc]
+                        #print(words)
+                        temp=sorted(set(words))
+                        vocab.extend(temp)
+                        temp=[]
+                        doc1=[]
+                        words=[]
             for w in vocab:
                 if w not in stop_words:
                     filtered_vocab.append(w)
@@ -139,8 +148,7 @@ class IndexData:
         idf_vector_reshaped=np.reshape(idf_vector, (idf_vector.shape[0],1))
         tf_idf_matrix=tf_idf_matrix*idf_vector_reshaped
 
-
-        np.savez( 'tfidf.npz', matrix=tf_idf_matrix, vocab=self.filtered_vocab )
+        np.savez( 'tfidf.npz', matrix=tf_idf_matrix, vocab=self.filtered_vocab, urls=self.urlList, title=self.titleList )
 
 ############################### HANDLER #################################
 if __name__ == '__main__':
