@@ -85,3 +85,5 @@ if __name__ == '__main__':
     for docIndex in rankList:
         print("\n")
         print(titleList[docIndex] + " " + urlList[docIndex])
+    print("\n")
+

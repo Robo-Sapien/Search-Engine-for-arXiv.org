@@ -42,7 +42,6 @@ class CosineScore:
         for index in range(min):
             if self.score[self.rank[index]] > 0:
                 rankList.append(self.rank[index])
-        print(self.score)
         return rankList
 
 
