@@ -13,8 +13,8 @@ import sys
 from scipy import spatial
 from nltk.stem.porter import PorterStemmer
 
-# reload(sys)
-# sys.setdefaultencoding('utf8')
+reload(sys)
+sys.setdefaultencoding('utf8')
 porter_stemmer = PorterStemmer()
 wordnet_lemmatizer = WordNetLemmatizer()
 

@@ -48,8 +48,11 @@ class SearchQuery:
 
         #Iterating through the query
         for term in query_word_list:
-            term_id=word_bag[term]
-            query_vector[term_id]=1;
+            try:
+                term_id=word_bag[term]
+                query_vector[term_id]=1;
+            except Exception as e:
+                pass
 
         self.queryVector=query_vector
 
@@ -61,7 +64,10 @@ if __name__ == '__main__':
     stop_words = set(stopwords.words('english'))
     porter_stemmer = PorterStemmer()
     wordnet_lemmatizer = WordNetLemmatizer()
-    query=["learning","machine"]
+    string="shit"
+    query=[]
+    tokens = word_tokenize(string)
+    query=tokens
     query=[w.lower() for w in query if (w.isalpha() and w not in stop_words)]
     query=[(wordnet_lemmatizer.lemmatize(w)) for w in query]
     query=[porter_stemmer.stem(w) for w in query]
@@ -75,4 +81,6 @@ if __name__ == '__main__':
 
     rankList = obj.getPages(0,10)
     for docIndex in rankList:
+        print("\n")
         print(titleList[docIndex] + " " + urlList[docIndex])
+        
