@@ -30,14 +30,14 @@ class SearchQuery:
     ################ DATA ATTRIBUTES ######################
     queryVector = None
     tfidfMatrix = None
-	urlList = None
-	titleList = None
+    urlList = None
+    titleList = None
     tfidf = None
 
     def __init__(self, arg):
         self.tfidf = np.load('tfidf.npz')
-		self.tfidfMatrix = self.tfidf['matrix']
-		self.urlList = self.tfidf['urls']
+        self.tfidfMatrix = self.tfidf['matrix']
+        self.urlList = self.tfidf['urls']
         self.titleList = self.tfidf['titles']
 
     def processQuery(self, word_bag, query_word_list):
@@ -83,7 +83,7 @@ class SearchQuery:
         obj = CosineScore(self.queryVector, self.tfidfMatrix)
 
         rankList = obj.getPages(10)
-		finalList = []
+        finalList = []
         for docIndex in rankList:
-            finalList.append((self.titleList[docIndex], self.urlList[docIndex])))
-		return finalList
+            finalList.append((self.titleList[docIndex], self.urlList[docIndex]))
+            return finalList

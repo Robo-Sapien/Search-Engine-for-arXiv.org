@@ -5,11 +5,11 @@ import plotly.graph_objs as go
 from dash.dependencies import Input,Output,State
 
 #Importing our Serching Modules
-#from SearchQuery import SearchQuery
+from ScrapedData.SearchQuery import SearchQuery
 
 ####################### GLOBAL VARIABLES #################################
 app=dash.Dash()
-#chotu_searcher=SearchQuery()
+chotu_searcher=SearchQuery()
 
 ####################### DASH DESIGNING ###################################
 app.layout=html.Div(children=[
@@ -60,14 +60,17 @@ def search_and_display_linear_ranking(dummy,query):
     submit button, then this will query the tf-idf vector and display linear
     ranking in Table.
     '''
-    print query
-    test_result=[('name1','https://community.plot.ly/t/hyperlink-in-label/8224'),
-                ('name2','https://github.com/plotly/dash-html-components/issues/16')]
 
+    # test_result=[('name1','https://community.plot.ly/t/hyperlink-in-label/8224'),
+    #             ('name2','https://github.com/plotly/dash-html-components/issues/16')]
 
+    #Querying our tf_idf ranking system to get the relevant document
+    ranked_results=chotu_searcher.search(query)
+
+    #Creating the table with the correspondin hyperlink
     table_list=[html.Tr([
-        html.Td(result[0]),html.Td(html.A(result[0],href=result[1],target='_blank'))
-    ])for result in test_result]
+        html.Td(html.A(result[0],href=result[1],target='_blank'))
+    ])for result in ranked_result]
 
     return table_list
 
