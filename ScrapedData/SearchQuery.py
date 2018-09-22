@@ -28,7 +28,7 @@ class SearchQuery:
     '''
 
     ################ DATA ATTRIBUTES ######################
-  queryVector=None
+    queryVector=None
 
     def processQuery(self, word_bag, query_word_list):
         '''
@@ -61,15 +61,18 @@ if __name__ == '__main__':
     stop_words = set(stopwords.words('english'))
     porter_stemmer = PorterStemmer()
     wordnet_lemmatizer = WordNetLemmatizer()
-    query=["learning","shit"]
+    query=["learning","machine"]
     query=[w.lower() for w in query if (w.isalpha() and w not in stop_words)]
     query=[(wordnet_lemmatizer.lemmatize(w)) for w in query]
     query=[porter_stemmer.stem(w) for w in query]
 
     tfidf_solver.processQuery( tfidf['vocab'],query)
-
+    urlList = tfidf['urls']
+    titleList = tfidf['titles']
     #Getting the page ranking for the above query
 
-    obj = CosineScore(query.queryVector, tfidf['matrix'])
+    obj = CosineScore(tfidf_solver.queryVector, tfidf['matrix'])
 
-    print(obj.getPages(0,10))
+    rankList = obj.getPages(0,10)
+    for docIndex in rankList:
+        print(titleList[docIndex] + " " + urlList[docIndex])

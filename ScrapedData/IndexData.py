@@ -13,8 +13,8 @@ import sys
 from scipy import spatial
 from nltk.stem.porter import PorterStemmer
 
-reload(sys)  
-sys.setdefaultencoding('utf8')
+# reload(sys)
+# sys.setdefaultencoding('utf8')
 porter_stemmer = PorterStemmer()
 wordnet_lemmatizer = WordNetLemmatizer()
 
@@ -148,7 +148,7 @@ class IndexData:
         idf_vector_reshaped=np.reshape(idf_vector, (idf_vector.shape[0],1))
         tf_idf_matrix=tf_idf_matrix*idf_vector_reshaped
 
-        np.savez( 'tfidf.npz', matrix=tf_idf_matrix, vocab=self.filtered_vocab, urls=self.urlList, title=self.titleList )
+        np.savez( 'tfidf.npz', matrix=tf_idf_matrix, vocab=self.filtered_vocab, urls=self.urlList, titles=self.titleList )
 
 ############################### HANDLER #################################
 if __name__ == '__main__':
