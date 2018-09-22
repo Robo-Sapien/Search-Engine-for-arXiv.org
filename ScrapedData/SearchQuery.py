@@ -64,7 +64,7 @@ if __name__ == '__main__':
     stop_words = set(stopwords.words('english'))
     porter_stemmer = PorterStemmer()
     wordnet_lemmatizer = WordNetLemmatizer()
-    string="shit"
+    string="Andy"
     query=[]
     tokens = word_tokenize(string)
     query=tokens

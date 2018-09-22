@@ -1,5 +1,7 @@
 from scipy import spatial
 import numpy
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning) 
 
 
 class CosineScore:
@@ -17,7 +19,10 @@ class CosineScore:
         for j in range(matrix.shape[1]):
             column = matrix[:,j]
             self.docIndex.append(j)
-            self.score.append(1 - spatial.distance.cosine(column, query))
+            try:
+            	self.score.append(1 - spatial.distance.cosine(column, query))
+            except Exception as e:
+            	pass
         self.rank = list(reversed([x for _, x in sorted(zip(self.score, self.docIndex))]))
 
     def getPages(self, number):
@@ -37,6 +42,7 @@ class CosineScore:
         for index in range(min):
             if self.score[self.rank[index]] > 0:
                 rankList.append(self.rank[index])
+        print(self.score)
         return rankList
 
 

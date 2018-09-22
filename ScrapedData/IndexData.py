@@ -12,6 +12,8 @@ import string
 import sys
 from scipy import spatial
 from nltk.stem.porter import PorterStemmer
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -141,7 +143,7 @@ class IndexData:
         idf_vector=np.log(len(doc_word_list)/(1+idf_vector))
 
         #Processing the term_frequency
-        tf_idf_matrix=1+np.log(1+tf_idf_matrix)
+        tf_idf_matrix=np.log(1+tf_idf_matrix)
 
 
         #Calculating the final tf idf matrix
