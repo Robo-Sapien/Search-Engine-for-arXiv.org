@@ -16,7 +16,7 @@ from scipy import spatial
 from CosineScore import *
 
 ###################### TF-IDF PROCESSOR #############################
-class TF_IDF:
+class SearchQuery:
     '''
     This class will provide the functionality for all the postprocessing
     with the following tasks:
@@ -27,10 +27,10 @@ class TF_IDF:
     '''
 
     ################ DATA ATTRIBUTES ######################
-    tf_idf_matrix=None
-    query_vector=None
 
-    def process_the_query(self, word_bag, query_word_list):
+    queryVector=None
+
+    def processQuery(self, word_bag, query_word_list):
         '''
         This function will take a query from the user, then make a boolean
         encoding of the query in the space of the word bag.
@@ -51,18 +51,18 @@ class TF_IDF:
             term_id=word_bag[term]
             query_vector[term_id]=1;
 
-        self.query_vector=query_vector
+        self.queryVector=query_vector
 
 ############################### HANDLER #################################
 if __name__ == '__main__':
 
-    tfidf_solver=TF_IDF()
+    query = SearchQuery()
     tfidf = np.load('tfidf.npz')
 
-    tfidf_solver.process_the_query( tfidf['vocab'], ["quantum","learning"])
+    query.processQuery( tfidf['vocab'], ["quantum","learning"])
 
     #Getting the page ranking for the above query
 
-    obj = CosineScore(tfidf_solver.query_vector, tfidf['matrix'])
+    obj = CosineScore(query.queryVector, tfidf['matrix'])
 
     print(obj.getPages(0,10))
