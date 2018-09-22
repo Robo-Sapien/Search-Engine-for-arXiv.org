@@ -2,6 +2,7 @@
 # import csv
 import numpy as np
 import nltk
+from nltk.corpus import wordnet as wn
 from nltk import word_tokenize
 # from nltk import FreqDist
 from nltk.stem import WordNetLemmatizer
@@ -68,7 +69,7 @@ class SearchQuery:
 
 ############################### HANDLER #################################
     def search(self, queryString,search_length=10,return_rank_list=False):
-
+        wn.ensure_loaded() 
         stop_words = set(stopwords.words('english'))
         porter_stemmer = PorterStemmer()
         wordnet_lemmatizer = WordNetLemmatizer()
