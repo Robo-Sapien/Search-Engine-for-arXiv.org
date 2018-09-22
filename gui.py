@@ -4,8 +4,12 @@ import dash_core_components as dcc
 import plotly.graph_objs as go
 from dash.dependencies import Input,Output,State
 
+#Importing our Serching Modules
+#from SearchQuery import SearchQuery
+
 ####################### GLOBAL VARIABLES #################################
 app=dash.Dash()
+#chotu_searcher=SearchQuery()
 
 ####################### DASH DESIGNING ###################################
 app.layout=html.Div(children=[
@@ -14,7 +18,7 @@ app.layout=html.Div(children=[
         ### Ading input box for query input
         dcc.Input(id='search_box',value='Dont B*ng,just Search!!',type='text',style={'width':'70%'}),
         ### Adding the search button
-        html.Button(id='search_button',children='Search',style={'width':'20%','margin-left':'5px'})
+        html.Button(id='search_button',children='Search',n_clicks=0,style={'width':'20%','margin-left':'5px'})
     ],
     style={'width':'100%',
             'display':'inline-block'}
@@ -47,7 +51,7 @@ app.layout=html.Div(children=[
 ##################### CALLBACKS for ELEMENTS #########################
 @app.callback(
     Output(component_id='linear_rank',component_property='children'),
-    [Input(component_id='search_button',component_property='children')],
+    [Input(component_id='search_button',component_property='n_clicks')],
     [State(component_id='search_box',component_property='value')]
 )
 def search_and_display_linear_ranking(dummy,query):
@@ -56,12 +60,13 @@ def search_and_display_linear_ranking(dummy,query):
     submit button, then this will query the tf-idf vector and display linear
     ranking in Table.
     '''
+    print query
     test_result=[('name1','https://community.plot.ly/t/hyperlink-in-label/8224'),
                 ('name2','https://github.com/plotly/dash-html-components/issues/16')]
 
-    table_list=['tanhs']
+
     table_list=[html.Tr([
-        html.Td(result[0]),html.Td(html.A('click me',href=result[1],target='_blank'))
+        html.Td(result[0]),html.Td(html.A(result[0],href=result[1],target='_blank'))
     ])for result in test_result]
 
     return table_list
