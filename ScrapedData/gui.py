@@ -6,7 +6,7 @@ from dash.dependencies import Input,Output,State
 
 #For PCA importing the sklearn
 from sklearn.decomposition import PCA as sklearnPCA
-sklearn_pca=sklearnPCA(components=2)#Projecting to two dimension
+sklearn_pca=sklearnPCA(n_components=2)#Projecting to two dimension
 
 #Importing our Serching Modules
 from SearchQuery import SearchQuery
@@ -63,30 +63,27 @@ app.layout = html.Div(children=[
     ]),
 
     ######## RESULT DISPLAY ###########
-    html.Div(children=[
-        #Linear rank Table display
-        html.Table(id='linear_rank',style={'width':'50%','margin-left':'5px'}),
+    html.Div(className='container-fluid', children=[
+        html.Div(className='row justify-content-md-center', children=[
+            html.Div(className='col-6', children=[
+                #Linear rank Table display
+                html.Table(id='linear_rank')
+                #Adding the slider to get variable output
+            ]),
 
-        #2-Dimensional rank Scatter Plot(interactive)
-        dcc.Graph(id='2D_rank',style={'width':'50%','margin-left':'5px'})
-
-        #Adding the slider to get variable output
-    ],
-    style={'width':'100%',
-            'display':'inline-block'}
-    ),
-
-    ######## SEARCH DISPLAY ###########
-    html.Div(children=[
-        ### Adding the dispay label for the selected document
-        html.Label(id='display_box',children='',style={'width':'70%'}),
-        ### Adding the button to go the the specified link
-        html.Button(id='go_to_link',children='Go to Link',style={'width':'20%','margin-left':'5px'})
-    ],
-    style={'width':'100%',
-            'display':'inline-block'}
-    )
+            ######## SEARCH DISPLAY ###########
+            html.Div(className='col-6', children=[
+                #2-Dimensional rank Scatter Plot(interactive)
+                dcc.Graph(id='2D_rank')
+            ])
+        ])
+    ])
 ])
+
+    # ### Adding the dispay label for the selected document
+    # html.Label(id='display_box',children='',style={'width':'70%'}),
+    # ### Adding the button to go the the specified link
+    # html.Button(id='go_to_link',children='Go to Link',style={'width':'20%','margin-left':'5px'})
 
 ##################### CALLBACKS for ELEMENTS #########################
 #Callback for 1D linear ranking in table format
