@@ -1,16 +1,17 @@
 # from __future__ import print_function
 # import csv
 import numpy as np
-# import nltk
-# from nltk import word_tokenize
+import nltk
+from nltk import word_tokenize
 # from nltk import FreqDist
-# from nltk.stem import WordNetLemmatizer
+from nltk.stem import WordNetLemmatizer
 # import pandas
-# from nltk.corpus import stopwords
+from nltk.corpus import stopwords
 import string
 # from string import maketrans
 import sys
 from scipy import spatial
+from nltk.stem.porter import PorterStemmer
 
 #Importing the Cosine Score Class for calculating the ranking
 from CosineScore import *
@@ -29,6 +30,7 @@ class TF_IDF:
     ################ DATA ATTRIBUTES ######################
     tf_idf_matrix=None
     query_vector=None
+    
 
     def process_the_query(self, word_bag, query_word_list):
         '''
@@ -55,11 +57,18 @@ class TF_IDF:
 
 ############################### HANDLER #################################
 if __name__ == '__main__':
-
     tfidf_solver=TF_IDF()
     tfidf = np.load('tfidf.npz')
 
-    tfidf_solver.process_the_query( tfidf['vocab'], ["quantum","learning"])
+    stop_words = set(stopwords.words('english'))
+    porter_stemmer = PorterStemmer()
+    wordnet_lemmatizer = WordNetLemmatizer()
+    query=["learning","shit"]
+    query=[w.lower() for w in query if (w.isalpha() and w not in stop_words)]
+    query=[(wordnet_lemmatizer.lemmatize(w)) for w in query]
+    query=[porter_stemmer.stem(w) for w in query]
+
+    tfidf_solver.process_the_query( tfidf['vocab'],query)
 
     #Getting the page ranking for the above query
 

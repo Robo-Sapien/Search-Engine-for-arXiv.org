@@ -11,6 +11,12 @@ import string
 # from string import maketrans
 import sys
 from scipy import spatial
+from nltk.stem.porter import PorterStemmer
+
+reload(sys)  
+sys.setdefaultencoding('utf8')
+porter_stemmer = PorterStemmer()
+wordnet_lemmatizer = WordNetLemmatizer()
 
 ###################### DATA Pre-Processing #########################
 class IndexData:
@@ -48,9 +54,14 @@ class IndexData:
                         #print(tokens)
                         doc1.extend(tokens)
                     #print(doc)
-                    doc1=[w.lower() for w in doc1 if w.isalpha()]
+                    doc1=[w.lower() for w in doc1 if (w.isalpha() and w not in stop_words)]
+                    doc1=[(wordnet_lemmatizer.lemmatize(w)) for w in doc1]
+                    doc1=[porter_stemmer.stem(w) for w in doc1]
                     documents.append(doc1)
-                    words=[w.lower() for w in doc1 if w.isalpha()]
+                    words=[w.lower() for w in doc1 if (w.isalpha() and w not in stop_words)]
+                    words=[(wordnet_lemmatizer.lemmatize(w)) for w in words]
+                    words=[porter_stemmer.stem(w) for w in words]
+
                     #words=[w.lower() for w in doc]
                     #words = [w.translate(table) for w in doc]
                     #print(words)
@@ -118,7 +129,7 @@ class IndexData:
         for term_id,doc_list in idf_dict.items():
             idf_vector[term_id]=len(doc_list)
         #Taking the inverse of the
-        idf_vector=np.log(len(doc_word_list)/idf_vector)
+        idf_vector=np.log(len(doc_word_list)/(1+idf_vector))
 
         #Processing the term_frequency
         tf_idf_matrix=1+np.log(1+tf_idf_matrix)
