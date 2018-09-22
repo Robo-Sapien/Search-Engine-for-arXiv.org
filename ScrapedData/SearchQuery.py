@@ -67,7 +67,7 @@ class SearchQuery:
         self.queryVector = query_vector
 
 ############################### HANDLER #################################
-    def search(self, queryString):
+    def search(self, queryString,search_length=10,return_rank_list=False):
 
         stop_words = set(stopwords.words('english'))
         porter_stemmer = PorterStemmer()
@@ -82,7 +82,11 @@ class SearchQuery:
         #Getting the page ranking for the above query
         obj = CosineScore(self.queryVector, self.tfidfMatrix)
 
-        rankList = obj.getPages(10)
+        rankList = obj.getPages(search_length)
+        if return_rank_list==True:
+            return rankList
+
+        #Getting the id and url name 
         finalList = []
         for docIndex in rankList:
             finalList.append((self.titleList[docIndex], self.urlList[docIndex]))
