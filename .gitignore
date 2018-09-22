@@ -104,3 +104,4 @@ venv.bak/
 
 #numpy zip
 *.npz
+*.pyc
