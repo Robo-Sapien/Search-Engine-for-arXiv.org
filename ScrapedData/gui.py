@@ -150,16 +150,11 @@ def search_and_display_2D_ranking(dummy,query):
         doc_title.append(searchObject.titleList[docIndex])
         doc_url.append(searchObject.urlList[docIndex])
 
-    print x_pcomp,'\n'
-    print y_pcomp,'\n'
-    print doc_title,'\n'
-    print '\n'
     #Crating the trace of the plot
     trace=go.Scatter(
         x=x_pcomp,
         y=y_pcomp,
         mode='markers',
-        name=doc_title,
         text=doc_title,
     )
 
