@@ -35,7 +35,7 @@ class SearchQuery:
     tfidf = None
 
     def __init__(self):
-        self.tfidf = np.load('/home/yashdeep/Documents/academics/DomainSearchEngine/ScrapedData/tfidf.npz')
+        self.tfidf = np.load('tfidf.npz')
         self.tfidfMatrix = self.tfidf['matrix']
         self.urlList = self.tfidf['urls']
         self.titleList = self.tfidf['titles']
