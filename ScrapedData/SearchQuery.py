@@ -33,13 +33,15 @@ class SearchQuery:
     tfidfMatrix = None
     urlList = None
     titleList = None
-    tfidf = None
+    #tfidf = None
+    vocab = None
 
     def __init__(self):
-        self.tfidf = np.load('tfidf.npz')
-        self.tfidfMatrix = self.tfidf['matrix']
-        self.urlList = self.tfidf['urls']
-        self.titleList = self.tfidf['titles']
+        tfidf = np.load('tfidf.npz')
+        self.tfidfMatrix = tfidf['matrix']
+        self.vocab = tfidf['vocab']
+        self.urlList = tfidf['urls']
+        self.titleList = tfidf['titles']
 
     def processQuery(self, word_bag, query_word_list):
         '''
@@ -78,7 +80,7 @@ class SearchQuery:
         query=[(wordnet_lemmatizer.lemmatize(w)) for w in query]
         query=[porter_stemmer.stem(w) for w in query]
 
-        self.processQuery( self.tfidf['vocab'], query )
+        self.processQuery( self.vocab, query )
 
         #Getting the page ranking for the above query
         obj = CosineScore(self.queryVector, self.tfidfMatrix)
