@@ -2,10 +2,27 @@
     width: 100%;
 }
 
-.navbar-dark{
+/* .navbar-dark{
     background-color: #e3f2fd;
-}
+} */
 
 .input-group{
     margin: 5px 0px 5px 0px
+}
+
+.list-group-item{
+    background-color: #ebf7f9;
+}
+
+#result_container{
+    margin-top: 15px;
+}
+
+.add_padding{
+    padding-top: 15px
+    padding-bottom: 15px
+}
+
+#link_box{
+    background-color: #ebf7f9;
 }

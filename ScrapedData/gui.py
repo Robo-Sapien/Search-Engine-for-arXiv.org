@@ -48,7 +48,7 @@ searchObject = SearchQuery()
 
 app.layout = html.Div(children=[
     ######### SEARCH BAR DESIGN ########
-    html.Nav(className='navbar navbar-dark', children=[
+    html.Nav(className='navbar navbar-dark bg-dark', children=[
         html.Div(className='container-fluid', children=[
             html.Div(id='search_box_container', className='row justify-content-md-center', children=[
                 html.Div(className='input-group col-9', children=[
@@ -64,16 +64,16 @@ app.layout = html.Div(children=[
     ]),
 
     ######## RESULT DISPLAY ###########
-    html.Div(className='container-fluid', children=[
+    html.Div(id='result_container', className='container-fluid', children=[
         html.Div(className='row justify-content-md-center', children=[
-            html.Div(className='col-6', children=[
+            html.Div(id='link_box', className='col-6 add_padding', children=[
                 #Linear rank Table display
-                html.Table(id='linear_rank')
+                html.Ul(id='doc_list', className='list-group list-group-flush')
                 #Adding the slider to get variable output
             ]),
 
             ######## SEARCH DISPLAY ###########
-            html.Div(className='col-6', children=[
+            html.Div(id='graph_box', className='col-6', children=[
                 #2-Dimensional rank Scatter Plot(interactive)
                 dcc.Graph(id='2D_rank')
             ])
@@ -89,7 +89,7 @@ app.layout = html.Div(children=[
 ##################### CALLBACKS for ELEMENTS #########################
 #Callback for 1D linear ranking in table format
 @app.callback(
-    Output(component_id='linear_rank',component_property='children'),
+    Output(component_id='doc_list',component_property='children'),
     [Input(component_id='search_button',component_property='n_clicks')],
     [State(component_id='search_box',component_property='value')]
 )
@@ -106,13 +106,29 @@ def search_and_display_linear_ranking(dummy,query):
     #Querying our tf_idf ranking system to get the relevant document
     ranked_result = searchObject.search(query)
 
-    table_list=[]
-    #Creating the table with the correspondin hyperlink
-    table_list=[html.Tr([
-        html.Td(html.A(result[0],href=result[1],target='_blank'))
-    ])for result in ranked_result]
+    doc_list=[]
 
-    return table_list
+    if len(ranked_result) == 0:
+        doc_list=[
+            html.Li(className='list-group-item', children=[
+                html.A(href='#',target='_blank', children=[
+                    'No results found'
+                ])
+            ])
+        ]
+        return doc_list
+    #Creating the table with the correspondin hyperlink
+    doc_list=[
+        html.Li(className='list-group-item', children=[
+            html.A(href=result[1],target='_blank', children=[
+                result[0],
+                html.Br(),
+                html.Span(className='badge badge-light', children=[result[1]])
+            ])
+        ])
+    for result in ranked_result]
+
+    return doc_list
 
 #Call back for displaying the 2D ranking
 @app.callback(
