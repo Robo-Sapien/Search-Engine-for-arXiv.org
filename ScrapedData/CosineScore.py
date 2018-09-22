@@ -1,7 +1,5 @@
 from scipy import spatial
 import numpy
-import warnings
-warnings.filterwarnings("ignore", category=RuntimeWarning) 
 
 
 class CosineScore:
@@ -11,19 +9,20 @@ class CosineScore:
 
     :param matrix: tf-idf numpy matrix
     """
-    rank = []
-    docIndex = []
-    score = []
+    rank = None
+    docIndex = None
+    score = None
     def __init__(self, query, matrix):
+        self.rank = []
+        self.docIndex = []
+        self.score = []
         """Constructor which calculates cosine similarity score for each document"""
         for j in range(matrix.shape[1]):
             column = matrix[:,j]
             self.docIndex.append(j)
-            try:
-            	self.score.append(1 - spatial.distance.cosine(column, query))
-            except Exception as e:
-            	pass
+            self.score.append(1 - spatial.distance.cosine(column, query))
         self.rank = list(reversed([x for _, x in sorted(zip(self.score, self.docIndex))]))
+        print(self.rank)
 
     def getPages(self, number):
         """To get the indices of the douments between the given ranks

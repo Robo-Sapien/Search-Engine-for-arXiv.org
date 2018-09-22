@@ -34,8 +34,8 @@ class SearchQuery:
     titleList = None
     tfidf = None
 
-    def __init__(self, arg):
-        self.tfidf = np.load('tfidf.npz')
+    def __init__(self):
+        self.tfidf = np.load('/home/yashdeep/Documents/academics/DomainSearchEngine/ScrapedData/tfidf.npz')
         self.tfidfMatrix = self.tfidf['matrix']
         self.urlList = self.tfidf['urls']
         self.titleList = self.tfidf['titles']
@@ -60,11 +60,11 @@ class SearchQuery:
         for term in query_word_list:
             try:
                 term_id=word_bag[term]
-                query_vector[term_id]=1;
+                query_vector[term_id] = 1
             except Exception as e:
                 pass
 
-        self.queryVector=query_vector
+        self.queryVector = query_vector
 
 ############################### HANDLER #################################
     def search(self, queryString):
@@ -77,7 +77,7 @@ class SearchQuery:
         query=[(wordnet_lemmatizer.lemmatize(w)) for w in query]
         query=[porter_stemmer.stem(w) for w in query]
 
-        self.processQuery( tfidf['vocab'],query)
+        self.processQuery( self.tfidf['vocab'], query )
 
         #Getting the page ranking for the above query
         obj = CosineScore(self.queryVector, self.tfidfMatrix)
@@ -86,4 +86,11 @@ class SearchQuery:
         finalList = []
         for docIndex in rankList:
             finalList.append((self.titleList[docIndex], self.urlList[docIndex]))
-            return finalList
+        return finalList
+#
+# def main():
+#     obj = SearchQuery()
+#     obj.search('Andy')
+#
+# if __name__ == '__main__':
+#     main()

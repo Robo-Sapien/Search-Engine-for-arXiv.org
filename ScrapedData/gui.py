@@ -5,18 +5,17 @@ import plotly.graph_objs as go
 from dash.dependencies import Input,Output,State
 
 #Importing our Serching Modules
-from ScrapedData.SearchQuery import SearchQuery
+from SearchQuery import SearchQuery
 
 ####################### GLOBAL VARIABLES #################################
-app=dash.Dash()
-chotu_searcher=SearchQuery()
+app = dash.Dash()
 
 ####################### DASH DESIGNING ###################################
 app.layout=html.Div(children=[
     ######### SEARCH BAR DESIGN ########
     html.Div(children=[
         ### Ading input box for query input
-        dcc.Input(id='search_box',value='Dont B*ng,just Search!!',type='text',style={'width':'70%'}),
+        dcc.Input(id='search_box',value='Andy',type='text',style={'width':'70%'}),
         ### Adding the search button
         html.Button(id='search_button',children='Search',n_clicks=0,style={'width':'20%','margin-left':'5px'})
     ],
@@ -65,8 +64,10 @@ def search_and_display_linear_ranking(dummy,query):
     #             ('name2','https://github.com/plotly/dash-html-components/issues/16')]
 
     #Querying our tf_idf ranking system to get the relevant document
-    ranked_results=chotu_searcher.search(query)
+    searchObject = SearchQuery()
+    ranked_result = searchObject.search(query)
 
+    table_list=[]
     #Creating the table with the correspondin hyperlink
     table_list=[html.Tr([
         html.Td(html.A(result[0],href=result[1],target='_blank'))
