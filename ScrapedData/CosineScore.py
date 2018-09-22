@@ -22,7 +22,6 @@ class CosineScore:
             self.docIndex.append(j)
             self.score.append(1 - spatial.distance.cosine(column, query))
         self.rank = list(reversed([x for _, x in sorted(zip(self.score, self.docIndex))]))
-        print(self.rank)
 
     def getPages(self, number):
         """To get the indices of the douments between the given ranks
