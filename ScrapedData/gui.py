@@ -6,7 +6,8 @@ from dash.dependencies import Input,Output,State
 
 #For PCA importing the sklearn
 from sklearn.decomposition import PCA as sklearnPCA
-sklearn_pca=sklearnPCA(components=2)#Projecting to two dimension
+import numpy as np
+sklearn_pca=sklearnPCA(n_components=2)#Projecting to two dimension
 
 #Importing our Serching Modules
 from SearchQuery import SearchQuery
@@ -118,14 +119,28 @@ def search_and_display_2D_ranking(dummy,query):
         doc_title.append(searchObject.titleList[docIndex])
         doc_url.append(searchObject.urlList[docIndex])
 
+    print x_pcomp,'\n'
+    print y_pcomp,'\n'
+    print doc_title,'\n'
+    print '\n'
     #Crating the trace of the plot
     trace=go.Scatter(
         x=x_pcomp,
         y=y_pcomp,
         mode='markers',
         name=doc_title,
+        text=doc_title,
     )
-    return trace
+
+    graph={
+        'data':[trace],
+        'layout':go.Layout(
+                xaxis={'title':'First Principle Component','range':[-10,10]},
+                yaxis={'title':'Second Principle Component','range':[-10,10]},
+                hovermode='closest'
+            )
+    }
+    return graph
 
 #################### SERVING THE APP ################################
 if __name__=='__main__':
