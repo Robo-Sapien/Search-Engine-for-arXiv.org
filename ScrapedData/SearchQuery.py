@@ -79,8 +79,9 @@ if __name__ == '__main__':
 
     obj = CosineScore(tfidf_solver.queryVector, tfidf['matrix'])
 
-    rankList = obj.getPages(0,10)
+    rankList = obj.getPages(10)
+    if len(rankList) == 0:
+        print("No results found")
     for docIndex in rankList:
         print("\n")
         print(titleList[docIndex] + " " + urlList[docIndex])
-        
