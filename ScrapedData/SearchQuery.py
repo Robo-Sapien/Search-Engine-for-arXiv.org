@@ -2,6 +2,7 @@
 # import csv
 import numpy as np
 import nltk
+from nltk.corpus import wordnet as wn
 from nltk import word_tokenize
 # from nltk import FreqDist
 from nltk.stem import WordNetLemmatizer
@@ -32,13 +33,15 @@ class SearchQuery:
     tfidfMatrix = None
     urlList = None
     titleList = None
-    tfidf = None
+    #tfidf = None
+    vocab = None
 
     def __init__(self):
-        self.tfidf = np.load('tfidf.npz')
-        self.tfidfMatrix = self.tfidf['matrix']
-        self.urlList = self.tfidf['urls']
-        self.titleList = self.tfidf['titles']
+        tfidf = np.load('tfidf.npz')
+        self.tfidfMatrix = tfidf['matrix']
+        self.vocab = tfidf['vocab']
+        self.urlList = tfidf['urls']
+        self.titleList = tfidf['titles']
 
     def processQuery(self, word_bag, query_word_list):
         '''
@@ -68,7 +71,7 @@ class SearchQuery:
 
 ############################### HANDLER #################################
     def search(self, queryString,search_length=10,return_rank_list=False):
-
+        wn.ensure_loaded() 
         stop_words = set(stopwords.words('english'))
         porter_stemmer = PorterStemmer()
         wordnet_lemmatizer = WordNetLemmatizer()
@@ -77,7 +80,7 @@ class SearchQuery:
         query=[(wordnet_lemmatizer.lemmatize(w)) for w in query]
         query=[porter_stemmer.stem(w) for w in query]
 
-        self.processQuery( self.tfidf['vocab'], query )
+        self.processQuery( self.vocab, query )
 
         #Getting the page ranking for the above query
         obj = CosineScore(self.queryVector, self.tfidfMatrix)
