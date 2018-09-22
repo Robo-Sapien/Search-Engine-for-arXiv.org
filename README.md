@@ -1,5 +1,10 @@
 # Domain Specific Search Engine
 
+## Group Members
++ Abhinav Kumar 2015B5A70674H
++ Yashdeep Thorat 2015B5A70675H
++ Shivam Bhagat 2015B5A70460H
+
 ## Requirements
 The following Python packages are required:
 + nltk
@@ -10,7 +15,8 @@ The following Python packages are required:
 + scipy
 
 ## Documentation
-For code documentation refer to: docs/build/html/index.html
++ For code documentation refer to: docs/build/html/index.html
++ Refer to DesignDocumentation.pdf for design documentation.
 
 ## Installation and Execution
 + Install all the packages and dependencies

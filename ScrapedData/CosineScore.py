@@ -1,5 +1,7 @@
 from scipy import spatial
 import numpy
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning) 
 
 
 class CosineScore:
@@ -17,10 +19,13 @@ class CosineScore:
         for j in range(matrix.shape[1]):
             column = matrix[:,j]
             self.docIndex.append(j)
-            self.score.append(1 - spatial.distance.cosine(column, query))
+            try:
+            	self.score.append(1 - spatial.distance.cosine(column, query))
+            except Exception as e:
+            	pass
         self.rank = list(reversed([x for _, x in sorted(zip(self.score, self.docIndex))]))
 
-    def getPages(self,start,end):
+    def getPages(self, number):
         """To get the indices of the douments between the given ranks
 
         :param start: starting *rank*.
@@ -29,14 +34,22 @@ class CosineScore:
 
         :return: list of document indices for ranks from start to end-1.
         """
-        return self.rank[start:end]
+        rankList = []
+        if number > len(self.rank):
+            min = len(self.rank)
+        else:
+            min = number
+        for index in range(min):
+            if self.score[self.rank[index]] > 0:
+                rankList.append(self.rank[index])
+        return rankList
 
-#
+
 # def main():
 #     query = [0, 1, 0]
 #     matrix = numpy.array([[2, 1, 3], [4, 3, 5], [6, 5, 7]])
 #     obj = CosineScore(query, matrix)
-#     print(obj.getPages(0,10))
+#     print(obj.getPages(10))
 #
 # if __name__ == '__main__':
 #     main()
