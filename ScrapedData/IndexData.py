@@ -86,8 +86,12 @@ class IndexData:
                     filtered_vocab.append(w)
 
         filtered_vocab=list(set(filtered_vocab))
+        doc_set = set(tuple(x) for x in documents)
+        filtered_documents = [list(x) for x in doc_set]
+        filtered_documents.sort(key = lambda x: documents.index(x))
         self.filtered_vocab=filtered_vocab
-        self.documents=documents
+        self.documents=filtered_documents
+        #self.documents=documents
 
     def process_the_matrix(self,word_bag,doc_word_list):
         '''
@@ -149,6 +153,18 @@ class IndexData:
         #Calculating the final tf idf matrix
         idf_vector_reshaped=np.reshape(idf_vector, (idf_vector.shape[0],1))
         tf_idf_matrix=tf_idf_matrix*idf_vector_reshaped
+
+        url_list = []
+        for sublist in self.urlList:
+        	if sublist not in url_list:
+        		url_list.append(sublist)
+        self.urlList=url_list
+
+        title_list = []
+        for sublist in self.titleList:
+        	if sublist not in title_list:
+        		title_list.append(sublist)
+        self.titleList=title_list
 
         np.savez( 'tfidf.npz', matrix=tf_idf_matrix, vocab=self.filtered_vocab, urls=self.urlList, titles=self.titleList )
 
