@@ -93,7 +93,7 @@ class SearchQuery:
         finalList = []
         for docIndex in rankList:
             finalList.append((self.titleList[docIndex], self.urlList[docIndex]))
-        return finalList
+        return list(set(finalList))
 #
 # def main():
 #     obj = SearchQuery()
