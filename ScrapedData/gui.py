@@ -66,7 +66,12 @@ app.layout = html.Div(children=[
     ######## RESULT DISPLAY ###########
     html.Div(id='result_container', className='container-fluid', children=[
         html.Div(className='row justify-content-md-center', children=[
+            #Table Display
             html.Div(id='link_box', className='col-6 add_padding', children=[
+                #Name of the Section
+                html.H2(children='Linear Search Result',
+                        style=dict(textAlign='center')),
+
                 #Linear rank Table display
                 html.Ul(id='doc_list', className='list-group list-group-flush')
                 #Adding the slider to get variable output
@@ -74,8 +79,27 @@ app.layout = html.Div(children=[
 
             ######## SEARCH DISPLAY ###########
             html.Div(id='graph_box', className='col-6', children=[
+                #Name of the Section
+                html.H2(children='Interactive Search Result',
+                        style=dict(textAlign='center')),
+
+                #Adding the DropDown Box for the choosing between Domain or ranked
+                html.Label('Group Search By: '),
+                dcc.Dropdown(
+                    options=[
+                        {'label':'Rank','value':'rank'},
+                        {'label':'Document Domain','value':'domain'},
+                    ],
+                    value='rank'
+                ),
                 #2-Dimensional rank Scatter Plot(interactive)
-                dcc.Graph(id='2D_rank')
+                dcc.Graph(id='2D_rank'),
+
+                #Adding the HyperLink area for the clicked data
+                html.Div(id='click_div',children=[
+                    html.Label('Hyperlink: Clicked Search Result'),
+                    html.Label(id='clickdata_hyperlink')
+                ])
             ])
         ])
     ])
@@ -130,7 +154,7 @@ def search_and_display_linear_ranking(dummy,query):
 
     return doc_list
 
-#Call back for displaying the 2D ranking
+#Callback for displaying the 2D ranking
 @app.callback(
     Output(component_id='2D_rank',component_property='figure'),
     [Input(component_id='search_button',component_property='n_clicks')],
@@ -142,7 +166,8 @@ def search_and_display_2D_ranking(dummy,query):
     and then display the resuld in 2D graph.
     '''
     #Creating the query vector
-    rankList=searchObject.search(query,search_length=10,return_rank_list=True)
+    rankList=searchObject.search(query,search_length=5000,return_rank_list=True)
+    print ('Length of result:',len(rankList))
     #Taking the tfidfMatrix
     tfidfMatrix=np.copy(searchObject.tfidfMatrix).T
     queryVector=np.copy(searchObject.queryVector).T
@@ -160,29 +185,105 @@ def search_and_display_2D_ranking(dummy,query):
     y_pcomp=[]
     doc_title=[]
     doc_url=[]
-    for docIndex in rankList:
+    for docIndex in rankList[0:10]:
         x_pcomp.append(tfidfProjection[docIndex,0])
         y_pcomp.append(tfidfProjection[docIndex,1])
-        doc_title.append(searchObject.titleList[docIndex])
+        #doc_title.append(searchObject.titleList[docIndex])
         doc_url.append(searchObject.urlList[docIndex])
+        doc_title.append(searchObject.titleList[docIndex]+'<br>'+doc_url[-1])
 
     #Crating the trace of the plot
-    trace=go.Scatter(
+    trace_good=go.Scatter(
         x=x_pcomp,
         y=y_pcomp,
         mode='markers',
         text=doc_title,
+        marker=dict(size=10,
+                    color='rgba(192, 0, 0, .8)',
+                    line=dict(width=2)),
+        name='top_10'
     )
 
+    #Creating the trace for the lower ranking than the first 10
+    bx_pcomp=[]     #Initializing the x-p_component of the bad docs
+    by_pcomp=[]     #Initlaizing the y-p_component of the bad docs
+    doc_title=[]
+    doc_url=[]
+    for docIndex in rankList[10:]:
+        bx_pcomp.append(tfidfProjection[docIndex,0])
+        by_pcomp.append(tfidfProjection[docIndex,1])
+        doc_url.append(searchObject.urlList[docIndex])
+        doc_title.append(searchObject.titleList[docIndex]+'<br>'+doc_url[-1])
+
+    #Crating the trace of the plot
+    trace_bad=go.Scatter(
+        x=bx_pcomp,
+        y=by_pcomp,
+        mode='markers',
+        text=doc_title,
+        marker=dict(size=5,
+                    color='rgba(205, 182, 253, .9)',
+                    line=dict(width=2)),
+        name='below_10'
+    )
+
+    #Creating a trace for the query vector
+    trace_query=go.Scatter(
+        x=[0,],
+        y=[0,],
+        mode='markers',
+        text='Query',
+        marker=dict(size=15,
+                    color='rgb(0,0,0)',
+                    symbol='star',),
+        name='Query Vector',
+    )
+
+
+    #Finally Creating the graph object and returning it
     graph={
-        'data':[trace],
+        'data':[trace_good,trace_bad,trace_query],
         'layout':go.Layout(
-                xaxis={'title':'First Principle Component','range':[-10,10]},
-                yaxis={'title':'Second Principle Component','range':[-10,10]},
-                hovermode='closest'
+                title='2D Visualization of Result',
+                xaxis={'title':'( <-- Machine Learning )    First Principle Component    ( Physics --> )','range':[-10,10]},
+                yaxis={'title':'Second Principle Component',
+                        'range':[-10,10]},
+                hovermode='closest',
+                shapes=[
+                    {
+                        'type':'rect',
+                        'xref':'x',
+                        'yref':'y',
+                        'x0':0,
+                        'y0':-10,
+                        'x1':10,
+                        'y1':10,
+                        'fillcolor':'#d3d3d3',
+                        'opacity':0.2,
+                        'line':{
+                            'width':0,
+                        }
+                    }
+                ]
             )
     }
     return graph
+
+#Callback for displaying the clicked search result
+@app.callback(
+    Output(component_id='clickdata_hyperlink',component_property='children'),
+    [Input(component_id='2D_rank',component_property='clickData')]
+)
+def create_clicked_hyperlink(clickData):
+    #print (clickData)
+    doc_name_url=clickData['points'][0]['text']
+    doc_name,doc_url=doc_name_url.split('<br>')
+    #print (doc_name)
+    hyperlink=html.A(href=doc_url,target='_blank',children=[
+                        doc_name,
+                    ])
+    return hyperlink
+
 
 #################### SERVING THE APP ################################
 if __name__=='__main__':

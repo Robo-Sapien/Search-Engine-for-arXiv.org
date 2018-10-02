@@ -15,8 +15,8 @@ from nltk.stem.porter import PorterStemmer
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+#reload(sys)
+#sys.setdefaultencoding('utf8')
 porter_stemmer = PorterStemmer()
 wordnet_lemmatizer = WordNetLemmatizer()
 
