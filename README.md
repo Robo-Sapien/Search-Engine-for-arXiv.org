@@ -23,5 +23,6 @@ The following Python packages are required:
 + Run WebScraper.py for any topic from https://arxiv.org/ which contains links to recent
 papers for that topic.(It will generate csv files containing the title, authors, abstract, date
 URL and Submission date)
-+ Run ScrapedData/mycsv.py to create a dictionary and generate the tf-idf matrix
++ Run ScrapedData/IndexData.py to create a dictionary and generate the tf-idf matrix
 and process the given query to give the documents with highest cosine similarity score.  
++ Run ScrapedData/gui.py to run the application on the local server and open the specified link in the browser.

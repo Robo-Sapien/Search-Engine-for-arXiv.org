@@ -23,7 +23,7 @@ class SearchQuery:
     This class will provide the functionality for all the postprocessing
     with the following tasks:
     2. Process the query
-    3. Then finally prove the user with the tfidf vector and the query
+    3. Then finally prove the user with the tf-idf vector and the query
         vector as attributed.
 
     '''
@@ -71,7 +71,7 @@ class SearchQuery:
 
 ############################### HANDLER #################################
     def search(self, queryString,search_length=10,return_rank_list=False):
-        wn.ensure_loaded() 
+        wn.ensure_loaded()
         stop_words = set(stopwords.words('english'))
         porter_stemmer = PorterStemmer()
         wordnet_lemmatizer = WordNetLemmatizer()
@@ -89,7 +89,7 @@ class SearchQuery:
         if return_rank_list==True:
             return rankList
 
-        #Getting the id and url name 
+        #Getting the id and url name
         finalList = []
         for docIndex in rankList:
             finalList.append((self.titleList[docIndex], self.urlList[docIndex]))
